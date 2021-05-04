@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { toUp } from '../../styles/animations.js';
 
 export const Section = styled.section`
   display: flex;
@@ -9,16 +10,72 @@ export const Section = styled.section`
   text-align: justify;
   line-height: 1.4rem;
   font-weight: 500;
-  color: rgb(240,240,240);
-  background-color: #000;
   font-family: 'Raleway', sans-serif;
+  svg {
+    width: 100%;
+    max-width: 600px;
+  }
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 100px 50px;
+  }
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
 const borderGrowth = keyframes`
   to {
     transform: rotate(365deg);
   }
 `;
+export const EachSection = styled.section`
+  min-height: 50vh;
+  margin: 30px 0;
+  opacity: 0;
+  line-height: 2rem;
+  animation: 1s ${toUp} forwards;
+  p {
+      margin: 30px 0;
+  };
+  @media screen and (min-width: 768px) {
+    font-size: 1.6rem;
+    text-align: center;
+    grid-column: 1 / 3;
+  }; 
+  @media screen and (min-width: 1200px) { 
+    margin: 30px 100px;
+    grid-column: 1 / 5
+  }
+`;
 
+export const SecondSection = styled.div`
+  min-height: 20vh;
+  @media screen and (min-width: 768px) {
+    grid-column: 1/3;
+  }
+  @media screen and (min-width: 1200px) {
+    grid-column: 1/4;
+  }
+`;
+export const ThirdSection = styled.div`
+  min-height: 20vh;
+  @media screen and (min-width: 768px) {
+    grid-column: 1/3;
+  }
+  @media screen and (min-width: 1200px) {
+    grid-column: 2 / 5;
+  }
+`;
+export const FourSection = styled.div`
+  min-height: 20vh;
+  @media screen and (min-width: 768px) {
+    grid-column: 1/3;
+  }
+  @media screen and (min-width: 1200px) {
+    grid-column: 1 / 5;
+  }
+`;
 export const textEntry = keyframes`
   from {
     opacity:0;
@@ -47,6 +104,15 @@ export const ImgContainer = styled.div`
     border-radius: 50%;
     animation: 1.5s ${borderGrowth} forwards 1.5s
   }
+  @media screen and (min-width: 768px) {
+    width: 250px;
+    height: 250px;
+    max-width: 450px;
+    justify-self: center;
+  }
+  @media screen and (min-width: 1200px) {
+    grid-column: 1/3
+  }
 `;
 
 export const Img = styled.img`
@@ -55,7 +121,7 @@ export const Img = styled.img`
   height: 100%
   object-fit: cover;
   border-radius: 50%;
-  animation: 1s ${textEntry} forwards 1s
+  animation: 1s ${textEntry} forwards 1s;
 `;
 
 export const textToUp = keyframes`
@@ -83,34 +149,24 @@ export const Title = styled.h2`
   opacity:0;
   text-align: center;
   font-size: 1.5rem;
-  animation: 2s ${textEntry} 1.5s forwards;
-`;
-export const ParagraphOne = styled.p`
-  opacity: 0;
-  font-weight: 500;
-  animation: 2s ${textToUp} 2.5s forwards;
-`;
-export const ParagraphTwo = styled.p`
-  margin: 30px 0;
-  text-align: start;
-  opacity:0;
-  animation: 2s ${textToLeft} 3s forwards;
-`;
-export const ParagraphTree = styled.p`
-`;
-export const ParagraphFour = styled.p`
-  margin: 30px 0;
-  text-align: start;
-`;
-export const ParagraphSix = styled.p`
-  margin: 50px 0;
-  text-align: center;
+  animation: 1.3s ${textEntry} 1.5s forwards;
+  @media screen and (min-width: 768px) {
+    font-size: 1.8rem;
+    text-align: center;
+    letter-spacing: 3px;
+  }
+  @media screen and (min-width: 1024px) {
+    text-align: start;
+  }
+  @media screen and (min-width: 1200px) {
+    grid-column: 3 / 5;
+    font-size: 2.5rem;
+  }
 `;
 export const ParagraphEnd = styled.p`
   margin: 50px 0 ;
   font-weight: bold;
   text-align: center;
-  color: rgb(70,70,70);
 `;
 export const SectionForm = styled.section`
   display: flex;

@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
   }
   #app {
     max-width: 1600px;
-    margin: 0 auto;
+    margin: 0 auto;  
   }
   @media screen and (min-width: 2500px) {
     #app {

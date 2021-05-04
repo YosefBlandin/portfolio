@@ -1,5 +1,4 @@
 import * as React from "react"
-
 function Pandemic(props) {
   return (
     <svg

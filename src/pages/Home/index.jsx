@@ -37,10 +37,10 @@ const Home = () => (
       <SecondTitle>Top 3 Projects</SecondTitle>
       <ProjectItem
         img={ecommerceImg}
-        title="Fitness Ecommerce SPA"
+        title="Machete Store SPA"
         technologies="React JS, MongoDB, Node JS, Express"
         description="I made this project designing the interface with React JS and fetching data from MongoDB Atlas Database using Express and Node JS."
-        secondaryDescription="You can view the products, add to cart and calculate your Corporal Mass Indice."
+        secondaryDescription="You can view the products and add to cart"
         buttoncolor="#92e3a9"
       />
       <ProjectItem
@@ -53,7 +53,7 @@ const Home = () => (
       />
       <ProjectItem
         img={weatherImg}
-        title="Weather Progressive Web App"
+        title="Weather SPA"
         technologies="React JS, Open Weather API"
         description="I made this project designing the interface with React JS and fetching data from Open Weather Api that it's provide me it information."
         secondaryDescription="You can search for the city that you want to view how the weather looks like."

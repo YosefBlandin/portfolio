@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
 import {
   HeaderContainer,
   Img,
@@ -16,17 +15,12 @@ import logoBlack from '../../assets/logoBlack.svg'
 
 const Header = () => {
 	const [menu, setMenu] = useState(false);
-  let {location: { pathname }} = useHistory();
 	return (
-  <HeaderContainer theme={pathname}>
+  <HeaderContainer>
       <Link to="/">
-        {pathname === "/" ? (  
           <Img src={logoImg} alt="Yosef Blandin logo of the page" />
-        ) : (  
-          <Img src={logoBlack} alt="Yosef Blandin logo of the page" />
-        )}
       </Link>
-			<MenuButton theme={pathname} onClick={() => setMenu(!menu)}>
+			<MenuButton onClick={() => setMenu(!menu)}>
       <Item1 />
       <Item2 />
       <Item3 />

@@ -1,14 +1,14 @@
-import React, { useRef } from 'react';
+import React, { useState,useRef,useEffect } from 'react';
 import Layout from '../../components/Layout'
 import {
    Section
   ,Title
   ,Img
   ,ImgContainer
-  ,ParagraphOne
-  ,ParagraphTwo
-  ,ParagraphFour
-  ,ParagraphSix
+  ,EachSection
+  ,SecondSection
+  ,ThirdSection
+  ,FourSection
   ,ParagraphEnd
   ,Fieldset
   ,SectionForm
@@ -25,8 +25,42 @@ import Ideas from './ideas'
 import Growth from './growth'
 
 const About = () => {
-  let avatar = useRef(null)
+  const [visibleSecondSection, setVisibleSecondSection] = useState(false);
+  const [visibleThirdSection, setVisibleThirdSection] = useState(false);
+  const [visibleFourSection, setVisibleFourSection] = useState(false);
 
+  let secondSection = useRef(null);
+  let thirdSection = useRef(null);
+  let fourSection = useRef(null);
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 1.0
+  }
+  useEffect(() => { 
+  const observer = new IntersectionObserver((entries) => {
+    const { isIntersecting } = entries[0]
+    return isIntersecting && setVisibleSecondSection(!visibleSecondSection)
+  }, options);
+    observer.observe(secondSection.current)
+    return () => observer.disconnect(secondSection.current)
+  }, [])
+  useEffect(() => { 
+  const observer = new IntersectionObserver((entries) => {
+    const { isIntersecting } = entries[0]
+    return isIntersecting && setVisibleThirdSection(!visibleThirdSection)
+  }, options);
+    observer.observe(thirdSection.current)
+    return () => observer.disconnect(thirdSection.current)
+  }, [])
+  useEffect(() => { 
+  const observer = new IntersectionObserver((entries) => {
+    const { isIntersecting } = entries[0]
+    return isIntersecting && setVisibleFourSection(!visibleFourSection)
+  }, options);
+    observer.observe(fourSection.current)
+    return () => observer.disconnect(fourSection.current)
+  }, [])
   return(
   <Layout>
     <Section> 
@@ -34,20 +68,39 @@ const About = () => {
         <Img src={avatarImg} alt='Yosef Blandin Avatar' />
       </ImgContainer>
       <Title>I am Yosef Blandin</Title>
-      <ParagraphOne>I have been learning Front End Development since a year ago.</ParagraphOne>
-      <ParagraphTwo>When the pandemic was started.</ParagraphTwo> 
-      <Pandemic />
-      <p>I'm a very optimistic person and so I decided to learn as a self taugh Front End development.</p>
-      <ParagraphFour>I was learning a lot for Platzi, Udemy and Youtube</ParagraphFour>
-      <DevWorking />
+      <EachSection>
+        <p>I have been learning Front End Development since a year ago.</p>
+        <p>When the pandemic was started.</p> 
+        <Pandemic />
+      </EachSection>
+      <SecondSection ref={secondSection}>
+        {visibleSecondSection && (
+        <EachSection>
+          <p>I'm a very optimistic person and so I decided to learn as a self taugh Front End development. I was learning a lot for Platzi, Udemy and Youtube</p>
+          <DevWorking/> 
+        </EachSection>
+        )}
+      </SecondSection>
+        <ThirdSection ref={thirdSection}>
+         {visibleThirdSection && (
+          <EachSection>
+            <p>I think that the best way for learn anything, is to practice a lot and to keep curiosity about the field.</p>
+            <Ideas /> 
+          </EachSection>
+          )} 
+        </ThirdSection>
+        <FourSection ref={fourSection}>
+          {visibleFourSection && (
+            <EachSection>
+              <p>I want to keep improving my professional skills and provide better solutions for the company, if the company grows, we too.</p>
+              <Growth />
+              <p>If you want to contact me, there is a Form.</p>
+              <ParagraphEnd>It is a pleasure.</ParagraphEnd>
 
-      <p>I think that the best way for learn anything, is to practice a lot and to keep curiosity about the field.</p>
-      <Ideas />
-      <ParagraphSix>I want to keep improving my professional skills and provide better solutions for the company, if the company grows, we too.</ParagraphSix>
-      <Growth />
-      <p>If you want to contact me, there is a Form.</p>
-      <ParagraphEnd>It is a pleasure.</ParagraphEnd>
-    </Section>
+            </EachSection>
+          )}
+        </FourSection>
+      </Section>
     <SectionForm>
       <Form>
         <H6>Contact me</H6>

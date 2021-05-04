@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Link as LinkAnchor } from 'react-router-dom';
 
 export const MenuButton = styled.div`
@@ -10,7 +10,6 @@ export const MenuButton = styled.div`
   height: 25px;
   div {
     border-radius: 20px;  
-    ${({ theme }) => (theme === '/' ? 'background:#000' : 'background: #fff')};
 	}
   @media screen and (min-width: 768px) {
     display: none;
@@ -40,7 +39,6 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   width: 100%;
   padding: 12px;
-  ${({ theme }) => (theme === '/' ? 'background:#fff' : 'background: #000')};
   @media screen and (min-width: 768px) {
     padding: 15px 14.5%;
   }
@@ -65,17 +63,22 @@ export const Img = styled.img`
 
 export const Ul = styled.ul`
   position: fixed;
+  display: flex;
   bottom: 0;
-  left: 0;
-  display: none;
+  right: -100vw;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 100vw;
+  width: 80vw;
   background: rgba(245, 245, 245, 1);
+  opacity: 0;
+  transition: 0.5s;
+  & {
+    ${({ menu }) => (menu ? 'opacity: 1;right: 0;' : false)}
+  }
   @media screen and (min-width:768px) {
-    display flex;
+    opacity: 1;
     flex-direction: row;
     position: sticky;  
     height: 100%;

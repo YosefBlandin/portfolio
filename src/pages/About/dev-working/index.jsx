@@ -3,16 +3,16 @@ import { Svg } from './styles'
 
 function DevWorking(props) {
   return (
-    <svg
+    <Svg
       className="prefix__animated"
       id="prefix__freepik_stories-developer-activity"
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns="http://www.w3.org/2000/Svg"
       viewBox="0 0 500 500"
       {...props}
     >
       <style>
         {
-          "@keyframes slideDown{0%{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}@keyframes floating{0%,to{opacity:1;transform:translateY(0)}50%{transform:translateY(-10px)}}@keyframes fadeIn{0%{opacity:0}to{opacity:1}}@keyframes heartbeat{0%,30%,40%,60%,to{transform:scale(1)}10%,50%{transform:scale(1.1)}}svg#prefix__freepik_stories-developer-activity:not(.prefix__animated) .prefix__animable{opacity:0}"
+          "@keyframes slideDown{0%{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}@keyframes floating{0%,to{opacity:1;transform:translateY(0)}50%{transform:translateY(-10px)}}@keyframes fadeIn{0%{opacity:0}to{opacity:1}}@keyframes heartbeat{0%,30%,40%,60%,to{transform:scale(1)}10%,50%{transform:scale(1.1)}}Svg#prefix__freepik_stories-developer-activity:not(.prefix__animated) .prefix__animable{opacity:0}"
         }
       </style>
       <g
@@ -5102,7 +5102,7 @@ function DevWorking(props) {
           <feColorMatrix values="0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0" />
         </filter>
       </defs>
-    </svg>
+    </Svg>
   )
 }
 
