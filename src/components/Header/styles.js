@@ -8,6 +8,10 @@ export const MenuButton = styled.div`
   justify-content: space-between;
   width: 35px;
   height: 25px;
+  div {
+    border-radius: 20px;  
+    ${({ theme }) => (theme === '/' ? 'background:#000' : 'background: #fff')};
+	}
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -15,18 +19,18 @@ export const MenuButton = styled.div`
 export const Item1 = styled.div`
   height: 3px;
   width: 100%;
-  background: #5667ff;
+  background: #000;
 `;
 
 export const Item2 = styled.div`
   height: 3px;
   width: 100%;
-  background: black;
+  background: #000;
 `;
 export const Item3 = styled.div`
   height: 3px;
   width: 100%;
-  background: #5667ff;
+  background: #000;
 `;
 
 export const HeaderContainer = styled.header`
@@ -36,15 +40,12 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   width: 100%;
   padding: 12px;
+  ${({ theme }) => (theme === '/' ? 'background:#fff' : 'background: #000')};
   @media screen and (min-width: 768px) {
     padding: 15px 14.5%;
   }
   @media screen and (min-width: 1024px) {
     padding: 20px 4.8%;
-  }
-  @media screen and (min-width: 1200px) {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
   }
 `;
 export const Img = styled.img`
@@ -52,9 +53,13 @@ export const Img = styled.img`
   width: 190px;
   height: 90px;
   @media screen and (min-width: 1200px) {
-    width: 320px;
-    height: 210px;
+    width: 220px;
+    height: 110px;
     grid-column: 1;
+  }
+  @media screen and (min-width: 2500px) {
+    width: 360px;
+    height: 240px;
   }
 `;
 
@@ -78,10 +83,6 @@ export const Ul = styled.ul`
     width: max-content;
     background: none;
   }
-  @media screen and (min-width: 1200px) {  
-    grid-column: 2;
-    justify-self: start;
-  }
 `;
 
 export const Li = styled.li`
@@ -95,8 +96,11 @@ export const Li = styled.li`
     font-weight: 400;
   }
   @media screen and (min-width: 1200px) {
-    font-size: 1.8rem;
+    font-size: 1.1rem;
     margin: 0 45px;
+  }
+  @media screen and (min-width: 2500px) {
+    font-size: 1.7rem;
   }
 `;
 

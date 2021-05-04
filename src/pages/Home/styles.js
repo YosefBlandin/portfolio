@@ -53,9 +53,15 @@ export const HomeParagraph = styled.p`
   @media screen and (min-width: 768px) {
     font-size: 0.8rem;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1400px) {
+    font-size: 0.85rem;
+  }
+  @media screen and (min-width: 1800px) {
+    font-size: 0.9rem;
+  }
+  @media screen and (min-width: 2500px) {
     font-size: 1.6rem;
-  } ;
+  }
 `;
 export const HomeTitle = styled.h1`
   font-size: 2rem;
@@ -66,7 +72,13 @@ export const HomeTitle = styled.h1`
   @media screen and (min-width: 1024px) {
     font-size: 2.6rem;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1400px) {
+    font-size: 2.8rem;
+  }
+  @media screen and (min-width: 1800px) {
+    font-size: 3rem;
+  }
+  @media screen and (min-width: 2500px) {
     font-size: 5rem;
   }
 `;
@@ -79,6 +91,6 @@ export const SecondTitle = styled.h2`
     font-size: 1.8rem;
   }
   @media screen and (min-width: 1200px) {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 `;

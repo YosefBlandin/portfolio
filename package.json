@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx eslint ./src && npx webpack --mode production",
+    "build": "npx webpack --mode production",
+    "format": "prettier --write {*.js,src/**/*.{js,jsx}}",
     "start": "npx webpack serve --mode development"
   },
   "keywords": [],

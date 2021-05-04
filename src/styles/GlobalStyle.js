@@ -11,8 +11,13 @@ const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
   }
   #app {
-    max-width: 2500px;
+    max-width: 1600px;
     margin: 0 auto;
+  }
+  @media screen and (min-width: 2500px) {
+    #app {
+      max-width: 2300px;
+    }
   }
 `;
 

@@ -5,11 +5,13 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
+    'prettier',
     'airbnb',
   ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
+      js: true,
     },
     ecmaVersion: 12,
     sourceType: 'module',

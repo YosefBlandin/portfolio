@@ -14,16 +14,22 @@ export const Anchor = styled.a`
   font-family: 'Raleway', 'sans-serif';
   text-decoration: none;
   border: none;
+  cursor: pointer;
   border-radius: 5px;
-  background: ${({ buttonColor }) => buttonColor || 'black'};
+  background: ${({ buttoncolor }) => buttoncolor || 'black'};
+  transition: 0.5s;
+  &:hover {
+    background: black;
+  }
   @media screen and (min-width: 1024px) {
     margin: 30px 0;
     width: 250px;
     height: 60px;
   }
-  @media screen and (min-width: 1200px) {
-    width: 350px;
-    height: 85px;
+  @media screen and (min-width: 2500px) {
+    width: 400px;
+    height: 100px;
+    margin: 50px 0;
     font-size: 1.6rem;
   }
 `;
@@ -41,7 +47,7 @@ export const Link = styled(LinkRouter)`
   text-decoration: none;
   border: none;
   border-radius: 5px;
-  background: #5667ff;
+  background: ${({ buttoncolor }) => buttoncolor || '#5667ff'};
   @media screen and (min-width: 1024px) {
     margin: 30px 0;
     width: 250px;

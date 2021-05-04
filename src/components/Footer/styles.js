@@ -6,10 +6,9 @@ export const FooterContainer = styled.footer`
   justify-content: center;
   width: 100%;
   height: 150px;
-  background: black;
 `;
 export const Paragraph = styled.p`
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 1.2rem;
 `;

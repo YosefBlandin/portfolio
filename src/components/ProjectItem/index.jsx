@@ -6,6 +6,10 @@ import {
   TechnologiesP,
   Title,
   Img,
+  SpanForEffect1,
+  SpanForEffect2,
+  SpanForEffect3,
+  SpanForEffect4,
 } from './styles';
 import AnchorOrLink from '../AnchorOrLink';
 
@@ -16,9 +20,9 @@ const ProjectItem = ({
   technologies,
   description,
   secondaryDescription,
-  buttonColor,
+  buttoncolor,
 }) => (
-  <Article>
+  <Article buttoncolor={buttoncolor}>
     <PrimarySection>
       <Img src={img} alt={alt} />
       <Title>{title}</Title>
@@ -30,7 +34,7 @@ const ProjectItem = ({
     <SecondarySection>
       <p>{description}</p>
       <p>{secondaryDescription}</p>
-      <AnchorOrLink isAnchor buttonColor={buttonColor}>
+      <AnchorOrLink isAnchor buttoncolor={buttoncolor}>
         View Project
       </AnchorOrLink>
     </SecondarySection>

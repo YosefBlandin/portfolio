@@ -2,11 +2,11 @@ import React from 'react';
 import { Anchor, Link } from './styles';
 
 const AnchorOrLink = ({
-  isAnchor, href, to, isLink, children,buttonColor
+  isAnchor, href, to, isLink, children,buttoncolor
 }) => (
   <>
-    {isAnchor && <Anchor buttonColor={buttonColor} href={href}>{children}</Anchor>}
-    {isLink && <Link buttonColor={buttonColor} to={to}>{children}</Link>}
+    {isAnchor && <Anchor buttoncolor={buttoncolor} href={href}>{children}</Anchor>}
+    {isLink && <Link buttoncolor={buttoncolor} to={to}>{children}</Link>}
   </>
 );
 
