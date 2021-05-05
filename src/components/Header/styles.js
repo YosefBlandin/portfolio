@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import { Link as LinkAnchor } from 'react-router-dom';
 
 export const MenuButton = styled.div`
-  z-index: 2;
+  z-index: 20;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -62,6 +62,7 @@ export const Img = styled.img`
 `;
 
 export const Ul = styled.ul`
+  z-index: 15;
   position: fixed;
   display: flex;
   bottom: 0;
