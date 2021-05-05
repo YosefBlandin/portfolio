@@ -9,11 +9,13 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+      display: none
+    }
   }
   #app {
     max-width: 1600px;
-    margin: 0 auto;  
-  }
+    margin: 0 auto;   
   @media screen and (min-width: 2500px) {
     #app {
       max-width: 2300px;

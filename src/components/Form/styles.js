@@ -60,7 +60,7 @@ export const SectionForm = styled.section`
 export const ResponseText = styled.span`
   margin: 10px 0;
   font-weight: bold;
-  color: gray;
+  color: ${({ error }) => error ? 'red' : '#37E08F'};
 `
 export const SubmitButton = styled.button`
   width: 150px;

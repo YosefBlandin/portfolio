@@ -34,7 +34,7 @@ export const EachSection = styled.section`
   margin: 30px 0;
   opacity: 0;
   line-height: 2rem;
-  animation: 1s ${toUp} forwards;
+  animation: 1.4s ${toUp} forwards ease;
   p {
       margin: 30px 0;
   };
