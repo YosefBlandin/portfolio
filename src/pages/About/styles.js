@@ -102,7 +102,7 @@ export const ImgContainer = styled.div`
     height: 100%;
     border: 5px dashed #5667ff;
     border-radius: 50%;
-    animation: 1.5s ${borderGrowth} forwards 1.5s
+    animation: 1.5s ${borderGrowth} forwards 0.5s
   }
   @media screen and (min-width: 768px) {
     width: 250px;
@@ -149,7 +149,7 @@ export const Title = styled.h2`
   opacity:0;
   text-align: center;
   font-size: 1.5rem;
-  animation: 1.3s ${textEntry} 1.5s forwards;
+  animation: 1.3s ${textEntry} 1s forwards;
   @media screen and (min-width: 768px) {
     font-size: 1.8rem;
     text-align: center;

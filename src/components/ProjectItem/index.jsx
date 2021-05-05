@@ -21,6 +21,8 @@ const ProjectItem = ({
   description,
   secondaryDescription,
   buttoncolor,
+  isAnchor,
+  href,
 }) => (
   <Article buttoncolor={buttoncolor}>
     <PrimarySection>
@@ -34,7 +36,7 @@ const ProjectItem = ({
     <SecondarySection>
       <p>{description}</p>
       <p>{secondaryDescription}</p>
-      <AnchorOrLink isAnchor buttoncolor={buttoncolor}>
+      <AnchorOrLink isAnchor href={href} buttoncolor={buttoncolor}>
         View Project
       </AnchorOrLink>
     </SecondarySection>

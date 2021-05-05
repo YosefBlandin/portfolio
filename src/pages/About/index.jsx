@@ -1,4 +1,5 @@
 import React, { useState,useRef,useEffect } from 'react';
+import useToTop from '../../utils/useToTop'
 import Layout from '../../components/Layout'
 import {
    Section
@@ -28,7 +29,6 @@ const About = () => {
   const [visibleSecondSection, setVisibleSecondSection] = useState(false);
   const [visibleThirdSection, setVisibleThirdSection] = useState(false);
   const [visibleFourSection, setVisibleFourSection] = useState(false);
-
   let secondSection = useRef(null);
   let thirdSection = useRef(null);
   let fourSection = useRef(null);
@@ -37,6 +37,7 @@ const About = () => {
     rootMargin: '0px',
     threshold: 1.0
   }
+  useToTop();
   useEffect(() => { 
   const observer = new IntersectionObserver((entries) => {
     const { isIntersecting } = entries[0]
