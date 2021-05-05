@@ -11,7 +11,6 @@ import {
   Item3,
 } from './styles';
 import logoImg from '../../assets/logo.svg'
-import logoBlack from '../../assets/logoBlack.svg'
 
 const Header = () => {
 	const [menu, setMenu] = useState(false);

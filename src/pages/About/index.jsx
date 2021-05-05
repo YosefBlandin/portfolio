@@ -1,5 +1,6 @@
 import React, { useState,useRef,useEffect } from 'react';
 import useToTop from '../../utils/useToTop'
+import FormComponent from '../../components/Form'
 import Layout from '../../components/Layout'
 import {
    Section
@@ -11,12 +12,6 @@ import {
   ,ThirdSection
   ,FourSection
   ,ParagraphEnd
-  ,Fieldset
-  ,SectionForm
-  ,Form
-  ,Input
-  ,Textarea
-  ,H6
 } from './styles'
 
 import DevWorking from './dev-working';
@@ -101,20 +96,9 @@ const About = () => {
             </EachSection>
           )}
         </FourSection>
-      </Section>
-    <SectionForm>
-      <Form>
-        <H6>Contact me</H6>
-        <Fieldset>
-          <label htmlFor="name" name="name">Name: </label>
-          <Input htmlFor="name" type="name" placeholder="Name" />
-          <label htmlFor="email" name="email">Email: </label>
-          <Input htmlFor="name" type="email" placeholder="Email" />
-          <label htmlFor="message" name="message">Message: </label>
-          <Textarea htmlFor="message" type="message" placeholder="Message" />
-        </Fieldset>
-      </Form>
-    </SectionForm>
+        </Section>
+      <FormComponent />
+
   </Layout>
   )
 }

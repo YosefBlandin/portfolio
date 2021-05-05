@@ -13,7 +13,7 @@ import Layout from '../../components/Layout';
 import About from '../../components/About';
 import heroImg from '../../assets/hero.svg';
 import ecommerceImg from '../../assets/ecommerce.svg';
-import chatImg from '../../assets/chat.svg';
+import petImg from '../../assets/pet.svg';
 import weatherImg from '../../assets/weather.svg';
 
 const Home = () => (
@@ -45,12 +45,13 @@ const Home = () => (
         href="https://machete-store-a65k2czfo-yosefblandin.vercel.app/"
       />
       <ProjectItem
-        img={chatImg}
-        title="Blandin's Chat PWA"
-        technologies="React JS, MongoDB ATLAS,Node JS, Express"
-        description="I made this project designing the interface with React JS and using MongoDB for save messages and using it for real time chat."
-        secondaryDescription="You can chat as Whatsapp like."
+        img={petImg}
+        title="Petgram PWA"
+        technologies="React JS, Apollo, GraphQL"
+        description="I made this project designing the interface with React JS and fetching data and making mutations to GraphQL using Apollo client"
+        secondaryDescription="You can view pets as Instagram"
         buttoncolor="#63d1fd" 
+        href="https://petgram-ef7mokdy7-yosefblandin.vercel.app/"
       />
       <ProjectItem
         img={weatherImg}
