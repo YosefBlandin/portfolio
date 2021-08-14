@@ -15,7 +15,7 @@ module.exports = {
     open: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.tsx', '.jsx', '.js', '.ts'],
   },
   module: {
     rules: [
@@ -23,6 +23,11 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: { loader: 'babel-loader' },
+      },
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: 'ts-loader',
       },
       {
         test: /\.(png|jpe?g|svg|gif)$/i,

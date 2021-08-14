@@ -12,8 +12,8 @@ import {
 } from './styles';
 import logoImg from '../../assets/logo.svg'
 
-const Header = () => {
-	const [menu, setMenu] = useState(false);
+const Header: React.FC = () => {
+	const [menu, setMenu] = useState<boolean>(false);
 	return (
   <HeaderContainer>
       <Link to="/">

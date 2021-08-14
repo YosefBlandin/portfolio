@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
+export const Container = styled.section`
+  min-height: 150vh;
+`;
+
 export const MainHome = styled.main`
   display: flex;
   flex-direction: column;
   padding: 5px;
   margin-bottom: 50px;
-
+  min-height: max-content;
   @media screen and (min-width: 1024px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
     &::-webkit-scrollbar {
-      display: none
+      display: none;
     }
   }
   #app {

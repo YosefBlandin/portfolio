@@ -146,10 +146,8 @@ export const textToLeft = keyframes`
 `;
 export const Title = styled.h2`
   margin: 50px 0;
-  opacity:0;
   text-align: center;
   font-size: 1.5rem;
-  animation: 1.3s ${textEntry} 1s forwards;
   @media screen and (min-width: 768px) {
     font-size: 1.8rem;
     text-align: center;

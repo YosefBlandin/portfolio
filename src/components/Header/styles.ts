@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { Link as LinkAnchor } from 'react-router-dom';
 
 export const MenuButton = styled.div`
@@ -10,7 +10,7 @@ export const MenuButton = styled.div`
   height: 25px;
   div {
     border-radius: 20px;  
-	}
+  }
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -61,7 +61,7 @@ export const Img = styled.img`
   }
 `;
 
-export const Ul = styled.ul`
+export const Ul = styled.ul< { menu: boolean } >`
   z-index: 15;
   position: fixed;
   display: flex;
