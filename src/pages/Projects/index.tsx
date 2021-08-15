@@ -3,8 +3,9 @@ import Layout from '../../components/Layout';
 import { ProjectCard } from '../../components/ProjectCard';
 import { ProjectsContainer } from './styles';
 
-import marvelImg from '../../assets/313.png';
-import weatherImg from '../../assets/weather.png';
+import marvelImg from '../../assets/marvel.jpg';
+import rickAndMortyImg from '../../assets/rickAndMorty.jpg';
+import weatherImg from '../../assets/weatherApp.jpg';
 
 const projects = [
     {
@@ -13,10 +14,30 @@ const projects = [
         projectImg: marvelImg
     },
     {
+        title: "Blandin's Rick and Morty",
+        technologies: "React, Sass, APIs",
+        projectImg: rickAndMortyImg
+    },
+    {
         title: "Weather App",
         technologies: "React, Sass, APIs",
         projectImg: weatherImg
-    }
+    },
+    {
+        title: "Weather App",
+        technologies: "React, Sass, APIs",
+        projectImg: weatherImg
+    },
+    {
+        title: "Weather App",
+        technologies: "React, Sass, APIs",
+        projectImg: weatherImg
+    },
+    {
+        title: "Weather App",
+        technologies: "React, Sass, APIs",
+        projectImg: weatherImg
+    },
 ]
 
 
