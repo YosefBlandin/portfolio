@@ -31,7 +31,7 @@ const Home = () => (
               Efficient and effectively components on the page
             </HomeParagraph>
             <HomeTitle>I make awesome web<br/> solutions</HomeTitle>
-            <AnchorOrLink buttoncolor="#5667FF" isLink to="projects">
+            <AnchorOrLink buttoncolor="#5667FF" isAnchor href="#projects">
               See my work
             </AnchorOrLink>
           </HomeSection>
