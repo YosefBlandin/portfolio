@@ -10,8 +10,19 @@
   cursor: pointer;
 }
 .headerHamburguer {
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  right: 20px;
+  color: #000;
+  z-index: 214;
   font-size: 1.3rem;
   cursor: pointer;
+  transition: 0.2s ease-in;
+  transition-property: color;
+}
+.headerHamburguerActive {
+  color: #fff;
 }
 .footer {
   display: flex;
