@@ -1,0 +1,40 @@
+.homeAboutInfoContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  /* border-radius: 20px; */
+  color: rgb(100, 100, 100);
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0 2rem;
+  text-align: justify;
+}
+
+.yosefImageContainer {
+  margin-bottom: 20px;
+  width: 290px;
+  height: 290px;
+}
+
+.yosefImage {
+  border-radius: 20px;
+}
+@media screen and (min-width: 768px) {
+  .homeAboutInfoContainer {
+    display: grid;
+    grid-template-columns: 255px 1fr;
+    align-items: center;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    max-width: 700px;
+    padding: 0 0;
+  }
+  .yosefImageContainer {
+    width: 240px;
+    height: 240px;
+    margin-bottom: 0;
+  }
+}

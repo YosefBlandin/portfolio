@@ -2,6 +2,7 @@ import { FC, ReactNode, useState } from "react";
 import { SiCoderwall, SiLinkedin, SiGithub, SiTwitter } from "react-icons/si";
 import { HamburguerElements } from "./HamburguerElements";
 import { hamburguerElements } from "./HamburguerElements/data";
+import { HeaderElements } from "./HeaderElements";
 import styles from "./styles.module.css";
 
 export const Layout: FC<ReactNode> = ({ children }) => {
@@ -22,6 +23,7 @@ export const Layout: FC<ReactNode> = ({ children }) => {
           data={hamburguerElements}
           showSidebar={showSidebar}
         />
+        <HeaderElements data={hamburguerElements} />
       </header>
       {children}
       <footer className={styles.footer}>

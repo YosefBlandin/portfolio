@@ -1,0 +1,71 @@
+.projectElementContainer {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 1fr 80px;
+  width: 290px;
+  height: 290px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.projectElementContainer:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 10px 0 rgba(200, 200, 200, 0.2);
+}
+.projectElementBackground {
+  z-index: 0;
+  position: absolute;
+  width: 90%;
+  height: 80%;
+  opacity: 0.6;
+  filter: blur(2px);
+  border-radius: 20px;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.2s ease-in-out;
+}
+.projectElementContainer:hover .projectElementBackground {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.projectElementContainer .projectElementText h5 {
+  font-size: 1.3rem;
+  margin-bottom: 3px;
+}
+.projectElementContainer .projectElementText p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.projectElementContainer .projectElementText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+  grid-row: 3;
+  padding-left: 1rem;
+  color: white;
+  background-color: black;
+  border-radius: 0 0 20px 15px;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (min-width: 1200px) {
+  .projectElementContainer {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .projectElementContainer {
+    width: 305px;
+    height: 305px;
+  }
+}
+@media screen and (min-width: 1930px) {
+  .projectElementContainer {
+    width: 355px;
+    height: 355px;
+  }
+}

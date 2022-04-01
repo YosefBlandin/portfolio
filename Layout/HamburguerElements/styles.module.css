@@ -40,5 +40,6 @@
 @media screen and (min-width: 1024px) {
   .hamburguerElementsContainer {
     display: none;
+    pointer-events: none;
   }
 }

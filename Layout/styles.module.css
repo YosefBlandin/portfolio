@@ -28,6 +28,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 3rem;
 }
 .footer p {
   margin-bottom: 0.8rem;
@@ -49,4 +52,9 @@
 }
 .footer .footerContact a span {
   margin-left: 0.2rem;
+}
+@media screen and (min-width: 1024px) {
+  .headerHamburguer {
+    display: none;
+  }
 }
