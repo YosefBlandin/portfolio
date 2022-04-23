@@ -13,7 +13,6 @@ import managementImage from "../public/management.svg";
 import { HomeAboutInfo } from "../components/HomeAboutInfo";
 
 const Home: NextPage = () => {
-  console.log(ecommerceImage);
   return (
     <div>
       <Head>
@@ -37,6 +36,7 @@ const Home: NextPage = () => {
                 Front-end Engineer <br /> foccussed on building web solutions
               </h1>
               <CarouselWords />
+              <button className={styles.heroTextButton}>see experience</button>
             </div>
           </section>
           <h2 className={styles.topProjectsTitle}>Top tier four projects</h2>
@@ -44,20 +44,20 @@ const Home: NextPage = () => {
             <ProjectElement
               backgroundImage={ecommerceImage.src}
               backgroundColor="#F6E7D8"
-              projectName="Machete Store"
+              projectName="Yosef's Store"
               projectCategory="E-commerce"
             />
             <ProjectElement
               backgroundImage={socialMediaImage.src}
               backgroundColor="#C8E3D4"
-              projectName="Petgram PWA"
-              projectCategory="Social platform"
+              projectName="Marvelnstagram"
+              projectCategory="Social Media Platform"
             />
             <ProjectElement
               backgroundImage={weatherImage.src}
               backgroundColor="#ffedc5"
-              projectName="Weather SPA"
-              projectCategory="Single page app"
+              projectName="Weather App"
+              projectCategory="React Native App"
             />
             <ProjectElement
               backgroundImage={managementImage.src}
@@ -67,10 +67,10 @@ const Home: NextPage = () => {
             />
           </div>
           <HomeAboutInfo
-            description="I've worked on many start-ups and from my experience I do like to push
+            description="I do like to push
         myself out of the confort zone, I've had some problems to solve and in
         those moments, I feel like I'm learning and improving my professional
-        abilities. I enjoy to work with a team and be helpful as much as posible, we are more productive together."
+        abilities. I enjoy to work with a team and to be helpful as much as posible, we are more productive together."
           />
         </main>
       </Layout>

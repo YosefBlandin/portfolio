@@ -31,7 +31,19 @@
 .heroImage {
   border-radius: 10px;
 }
-
+.heroTextButton {
+  width: 240px;
+  height: 50px;
+  margin-top: 30px;
+  border: none;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.27s ease-in-out;
+  border-radius: 5px;
+  background-color: #cc8d48;
+}
 .topProjectsContainer {
   display: flex;
   flex-wrap: wrap;

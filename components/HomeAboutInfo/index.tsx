@@ -8,15 +8,10 @@ export const HomeAboutInfo: FC<{
 }> = ({ description }) => {
   return (
     <article className={styles.homeAboutInfoContainer}>
-      <div className={styles.yosefImageContainer}>
-        <Image
-          src={yosefImage}
-          layout="responsive"
-          alt="Yosef Blandin photo"
-          className={styles.yosefImage}
-        />
-      </div>
-      <p>{description}</p>
+      <p className={styles.homeAboutInfoText}>&quot;{description}&quot;</p>
+      <p className={styles.homeAboutInfoSmallText}>
+        ~Yosef Enmanuel Blandin Rios
+      </p>
     </article>
   );
 };

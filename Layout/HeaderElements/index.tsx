@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { FC } from "react";
 import styles from "./styles.module.css";
 
@@ -8,7 +7,6 @@ interface iProps {
 }
 
 export const HeaderElements: FC<iProps> = ({ data }) => {
-  const history = useRouter();
   return (
     <ul className={styles.headerElementsList}>
       {data.map((element, key) => (

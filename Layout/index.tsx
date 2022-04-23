@@ -10,7 +10,9 @@ export const Layout: FC<ReactNode> = ({ children }) => {
   return (
     <>
       <header className={styles.header}>
-        <p className={styles.headerLogo}>Yosef Blandin</p>
+        <p className={styles.headerLogo}>
+          Yosef <span>Blandin</span>
+        </p>
         <SiCoderwall
           className={
             showSidebar

@@ -4,16 +4,13 @@ export const hamburguerElements = [
   {
     name: "Home",
     route: "/",
+    download: false,
     icon: <SiHomeassistant />,
   },
   {
-    name: "Projects",
-    route: "/projects",
-    icon: <SiOnnx />,
-  },
-  {
-    name: "About",
-    route: "/about",
+    name: "Resume",
+    download: true,
+    route: "/public/yosefCurriculum.pdf",
     icon: <SiAboutdotme />,
   },
 ];
