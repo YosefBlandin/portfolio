@@ -11,8 +11,44 @@ import socialMediaImage from "../public/socialMedia.svg";
 import weatherImage from "../public/weather.svg";
 import managementImage from "../public/management.svg";
 import { HomeAboutInfo } from "../components/HomeAboutInfo";
+import axios from "axios";
 
-const Home: NextPage = () => {
+const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
+  console.log("Projects", projects);
+  const topFourProjects = [
+    {
+      projectName: "Yosef's Store",
+      projectCategory: "E-commerce",
+      backgroundColor: "#F6E7D8",
+      backgroundImage: ecommerceImage.src,
+      route: "/projects/yosefStore",
+    },
+    {
+      projectName: "Marvelnstagram",
+      projectCategory: "Social Media Platform",
+      backgroundColor: "#C8E3D4",
+      backgroundImage: socialMediaImage.src,
+      route: "/projects/marvelnstagram",
+    },
+    {
+      projectName: "Weather App",
+      projectCategory: "React App",
+      backgroundColor: "#FFEDC5",
+      backgroundImage: weatherImage.src,
+      route: "/projects/weatherApp",
+    },
+    {
+      projectName: "Blandin's Users Manager",
+      projectCategory: "Management",
+      backgroundColor: "#e0d6ff",
+      backgroundImage: managementImage.src,
+      route: "/projects/blandinsUsersManager",
+    },
+  ];
+  const homeAboutInfo = `I do like to push
+	myself out of the confort zone, I've had some problems to solve and in
+	those moments, I feel like I'm learning and improving my professional
+	abilities. I enjoy to work with a team and to be helpful as much as posible, we are more productive together.`;
   return (
     <div>
       <Head>
@@ -41,41 +77,24 @@ const Home: NextPage = () => {
           </section>
           <h2 className={styles.topProjectsTitle}>Top tier four projects</h2>
           <div className={styles.topProjectsContainer}>
-            <ProjectElement
-              backgroundImage={ecommerceImage.src}
-              backgroundColor="#F6E7D8"
-              projectName="Yosef's Store"
-              projectCategory="E-commerce"
-            />
-            <ProjectElement
-              backgroundImage={socialMediaImage.src}
-              backgroundColor="#C8E3D4"
-              projectName="Marvelnstagram"
-              projectCategory="Social Media Platform"
-            />
-            <ProjectElement
-              backgroundImage={weatherImage.src}
-              backgroundColor="#ffedc5"
-              projectName="Weather App"
-              projectCategory="React Native App"
-            />
-            <ProjectElement
-              backgroundImage={managementImage.src}
-              backgroundColor="#e0d6ff"
-              projectName="Blandin's Users Manager"
-              projectCategory="Management"
-            />
+            {topFourProjects.map((element, index) => (
+              <ProjectElement key={index} {...element} />
+            ))}
           </div>
-          <HomeAboutInfo
-            description="I do like to push
-        myself out of the confort zone, I've had some problems to solve and in
-        those moments, I feel like I'm learning and improving my professional
-        abilities. I enjoy to work with a team and to be helpful as much as posible, we are more productive together."
-          />
+          <HomeAboutInfo description={homeAboutInfo} />
         </main>
       </Layout>
     </div>
   );
 };
+
+export async function getStaticProps() {
+  // const projects = await axios.get("/api/graphql");
+  return {
+    props: {
+      projects: [],
+    },
+  };
+}
 
 export default Home;

@@ -9,8 +9,9 @@ export const hamburguerElements = [
   },
   {
     name: "Resume",
-    download: true,
-    route: "/public/yosefCurriculum.pdf",
+    external: true,
+    route:
+      "https://drive.google.com/file/d/1bPP7VV9MYpkCCNrz-7DGuNn6qrYDQ6To/view?usp=sharing",
     icon: <SiAboutdotme />,
   },
 ];

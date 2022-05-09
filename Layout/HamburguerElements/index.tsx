@@ -4,7 +4,7 @@ import { FC } from "react";
 import styles from "./styles.module.css";
 
 interface iProps {
-  data: Array<{ name: string; route: string; icon: FC; download: boolean }>;
+  data: Array<{ name: string; route: string; icon: FC; external: boolean }>;
   showSidebar: boolean;
 }
 
@@ -19,8 +19,8 @@ export const HamburguerElements: FC<iProps> = ({ data, showSidebar }) => {
       }
     >
       {data.map((element, key) => (
-        <>
-          {element.download === false ? (
+        <li key={key}>
+          {element.external === false ? (
             <Link key={element.name} href={element.route} passHref>
               <a className={styles.hamburguerElement}>
                 <span
@@ -39,14 +39,15 @@ export const HamburguerElements: FC<iProps> = ({ data, showSidebar }) => {
                   }}
                 ></span>
                 {element.icon}
-                <li>{element.name}</li>
+                <span>{element.name}</span>
               </a>
             </Link>
           ) : (
             <a
               className={styles.hamburguerElement}
-              download={element.download}
               key={element.name}
+              target="_blank"
+              rel="noopener noreferrer"
               href={element.route}
             >
               <span
@@ -65,10 +66,10 @@ export const HamburguerElements: FC<iProps> = ({ data, showSidebar }) => {
                 }}
               ></span>
               {element.icon}
-              <li>{element.name}</li>
+              <span>{element.name}</span>
             </a>
           )}
-        </>
+        </li>
       ))}
     </ul>
   );

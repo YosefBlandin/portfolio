@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FC } from "react";
 import styles from "./styles.module.css";
 
@@ -6,24 +7,33 @@ export const ProjectElement: FC<{
   projectCategory: string;
   backgroundColor: string;
   backgroundImage: string;
-}> = ({ projectName, projectCategory, backgroundColor, backgroundImage }) => {
+  route: string;
+}> = ({
+  projectName,
+  projectCategory,
+  backgroundColor,
+  backgroundImage,
+  route,
+}) => {
   return (
-    <article
-      style={{
-        backgroundColor: backgroundColor,
-      }}
-      className={styles.projectElementContainer}
-    >
-      <div
+    <Link href={route} passHref>
+      <article
         style={{
-          backgroundImage: `url(${backgroundImage})`,
+          backgroundColor: backgroundColor,
         }}
-        className={styles.projectElementBackground}
-      ></div>
-      <div className={styles.projectElementText}>
-        <h5>{projectName}</h5>
-        <p>Category: {projectCategory}</p>
-      </div>
-    </article>
+        className={styles.projectElementContainer}
+      >
+        <div
+          style={{
+            backgroundImage: `url(${backgroundImage})`,
+          }}
+          className={styles.projectElementBackground}
+        ></div>
+        <div className={styles.projectElementText}>
+          <h5>{projectName}</h5>
+          <p>Category: {projectCategory}</p>
+        </div>
+      </article>
+    </Link>
   );
 };
