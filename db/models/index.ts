@@ -26,12 +26,9 @@ const ProjectsSchema = new Schema({
     required: true,
   },
   techStack: {
-    type: [{ name: String }],
+    type: [String],
     required: true,
   },
 });
 
-ProjectsSchema.index({ name: "text" });
-
-export default mongoose.models.Project ||
-  mongoose.model("Projects", ProjectsSchema);
+export default mongoose.model("Projects", ProjectsSchema);

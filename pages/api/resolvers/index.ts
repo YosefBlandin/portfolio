@@ -15,8 +15,8 @@ export const resolvers = {
   Query: {
     getProjects: async () => {
       try {
-        const projects = await Project.find({});
-        return projects.data.map(
+        const projects = await Project.find();
+        return projects?.data?.map(
           ({
             id,
             projectName,
@@ -54,6 +54,43 @@ export const resolvers = {
       } catch (error) {
         throw error;
       }
+    },
+  },
+  Mutation: {
+    newProject: async (_, { input }) => {
+      try {
+        const project = new Project(input);
+
+        const result = await project.save();
+
+        return result;
+      } catch (err) {
+        console.log(err);
+      }
+    },
+    updateProject: async (_, { id, input }) => {
+      let project = await Project.findById(id);
+
+      if (!project) {
+        throw new Error("Project not found");
+      }
+
+      project = await Project.findOneAndUpdate({ _id: id }, input, {
+        new: true,
+      });
+
+      return project;
+    },
+    deleteProject: async (_, { id }) => {
+      const project = await Project.findById(id);
+
+      if (!project) {
+        throw new Error("Project not found");
+      }
+
+      await Project.findOneAndDelete({ _id: id });
+
+      return "Product deleted";
     },
   },
 };

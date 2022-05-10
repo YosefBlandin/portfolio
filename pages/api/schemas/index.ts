@@ -8,11 +8,26 @@ export const typeDefs = gql`
     introduction: String
     description: String
     url: String
-    techStack: [String]
+    techStack: [String!]
   }
 
   type Query {
     getProjects: [Project]
     getProject(name: String!): Project!
+  }
+
+  input ProjectInput {
+    projectName: String
+    image: String
+    introduction: String
+    description: String
+    url: String
+    techStack: [String!]
+  }
+
+  type Mutation {
+    newProject(input: ProjectInput): Project
+    updateProject(id: ID!, input: ProjectInput): Project
+    deleteProject(id: ID!): String
   }
 `;
