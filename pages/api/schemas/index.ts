@@ -13,7 +13,7 @@ export const typeDefs = gql`
 
   type Query {
     getProjects: [Project]
-    getProject(name: String!): Project!
+    getProject(projectName: String!): Project!
   }
 
   input ProjectInput {

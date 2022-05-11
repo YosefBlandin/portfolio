@@ -16,7 +16,7 @@ export const resolvers = {
     getProjects: async () => {
       try {
         const projects = await Project.find();
-        return projects?.data?.map(
+        return projects?.map(
           ({
             id,
             projectName,
@@ -39,17 +39,18 @@ export const resolvers = {
         throw error;
       }
     },
-    getProject: async (_: string, args: string) => {
+    getProject: async (_: string, { projectName }: { projectName: string }) => {
       try {
-        const project = await axios.get("");
+        const project = await Project.find({ projectName: projectName });
+        console.log("PROJECT", project);
         return {
-          id: project.data.id,
-          projectName: project.data.projectName,
-          image: project.data.image,
-          introduction: project.data.introduction,
-          url: project.data.url,
-          description: project.data.description,
-          techStack: project.data.techStack,
+          id: project?.[0]?._id,
+          projectName: project?.[0]?.projectName,
+          image: project?.[0]?.image,
+          introduction: project?.[0]?.introduction,
+          url: project?.[0]?.url,
+          description: project?.[0]?.description,
+          techStack: project?.[0]?.techStack,
         };
       } catch (error) {
         throw error;
