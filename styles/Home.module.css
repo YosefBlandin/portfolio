@@ -95,8 +95,13 @@
     height: 450px;
   }
   .topProjectsContainer {
-    justify-content: space-between;
+    justify-content: center;
+		column-gap: 0;
   }
+	.topProjectsTitle {
+		font-size: 2.2rem;
+		font-weight: 600;
+	}
 }
 @media screen and (min-width: 1440px) {
   .container {
@@ -111,7 +116,6 @@
   .heroImageContainer {
     grid-column: 2;
     grid-row: 1;
-    margin: 0 auto;
     width: 500px;
     height: 500px;
   }

@@ -20,28 +20,28 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
     {
       projectName: "Yosef's Store",
       projectCategory: "E-commerce",
-      backgroundColor: "#fff",
+      backgroundColor: "#90908a",
       backgroundImage: ecommerceImage.src,
       route: "/projects/yosefStore",
     },
     {
       projectName: "Marvelnstagram",
       projectCategory: "Social Media Platform",
-      backgroundColor: "#fff",
+      backgroundColor: "#837666",
       backgroundImage: socialMediaImage.src,
       route: "/projects/marvelnstagram",
     },
     {
       projectName: "Weather App",
       projectCategory: "React App",
-      backgroundColor: "#fff",
+      backgroundColor: "#eadbc8",
       backgroundImage: weatherImage.src,
       route: "/projects/weatherApp",
     },
     {
       projectName: "Blandin's Users Manager",
       projectCategory: "Management",
-      backgroundColor: "#fff",
+      backgroundColor: "#e98a54",
       backgroundImage: managementImage.src,
       route: "/projects/blandinsUsersManager",
     },
@@ -76,7 +76,7 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
               <button className={styles.heroTextButton}>see experience</button>
             </div>
           </section>
-          <h2 className={styles.topProjectsTitle}>Top tier four projects</h2>
+          <h2 className={styles.topProjectsTitle}>Top projects</h2>
           <div className={styles.topProjectsContainer}>
             {topFourProjects.map((element, index) => (
               <ProjectElement key={index} {...element} />

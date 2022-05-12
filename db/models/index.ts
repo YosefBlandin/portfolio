@@ -31,4 +31,4 @@ const ProjectsSchema = new Schema({
   },
 });
 
-export default mongoose.model("Projects", ProjectsSchema);
+export default mongoose.models.Projects || mongoose.model("Projects", ProjectsSchema);
