@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
+import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import Head from "next/head";
 import Image from "next/image";
 import { Layout } from "../Layout";
 import { CarouselWords } from "../components/CarouselWords";
-import heroImage from "../public/hero.svg";
+import heroImage from "../public/yosefAvatar.svg";
 import styles from "../styles/Home.module.css";
 import { ProjectElement } from "../components/ProjectElement";
 import ecommerceImage from "../public/ecommerce.svg";
@@ -19,28 +20,28 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
     {
       projectName: "Yosef's Store",
       projectCategory: "E-commerce",
-      backgroundColor: "#F6E7D8",
+      backgroundColor: "#fff",
       backgroundImage: ecommerceImage.src,
       route: "/projects/yosefStore",
     },
     {
       projectName: "Marvelnstagram",
       projectCategory: "Social Media Platform",
-      backgroundColor: "#C8E3D4",
+      backgroundColor: "#fff",
       backgroundImage: socialMediaImage.src,
       route: "/projects/marvelnstagram",
     },
     {
       projectName: "Weather App",
       projectCategory: "React App",
-      backgroundColor: "#FFEDC5",
+      backgroundColor: "#fff",
       backgroundImage: weatherImage.src,
       route: "/projects/weatherApp",
     },
     {
       projectName: "Blandin's Users Manager",
       projectCategory: "Management",
-      backgroundColor: "#e0d6ff",
+      backgroundColor: "#fff",
       backgroundImage: managementImage.src,
       route: "/projects/blandinsUsersManager",
     },
@@ -69,7 +70,7 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
             </div>
             <div className={styles.heroTextContainer}>
               <h1>
-                Front-end Engineer <br /> foccussed on building web solutions
+                Frontend Engineer <br /> foccussed on building web solutions
               </h1>
               <CarouselWords />
               <button className={styles.heroTextButton}>see experience</button>
@@ -88,11 +89,31 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
   );
 };
 
-export async function getStaticProps() {
-  // const projects = await axios.get("/api/graphql");
+export async function getServerSideProps() {
+  const client = new ApolloClient({
+    uri: "http://localhost:3000/api/graphql",
+    cache: new InMemoryCache(),
+  });
+
+  const { data } = await client.query({
+    query: gql`
+      query getProjects {
+        getProjects {
+          id,
+          projectName,
+          image,
+          introduction,
+          description,
+          url,
+          techStack
+        }
+      }
+    `,
+  });
+  console.log("BAM NIGGI", data);
   return {
     props: {
-      projects: [],
+      projects: data?.getProjects,
     },
   };
 }
