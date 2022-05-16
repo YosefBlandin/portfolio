@@ -41,7 +41,7 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
     {
       projectName: "Blandin's Users Manager",
       projectCategory: "Management",
-      backgroundColor: "#e98a54",
+      backgroundColor: "#b99671",
       backgroundImage: managementImage.src,
       route: "/projects/blandinsUsersManager",
     },
@@ -61,8 +61,8 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
             <div className={styles.heroImageContainer}>
               <Image
                 src={heroImage}
-                width="500px"
-                height="500px"
+                width="600px"
+                height="600px"
                 alt="Hero laptop and smartphone interconnected"
                 objectFit="contain"
                 className={styles.heroImage}

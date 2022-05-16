@@ -92,7 +92,7 @@
     margin: 0;
 		justify-self: end;
     width: 400px;
-    height: 450px;
+    height: 500px;
   }
   .topProjectsContainer {
     justify-content: center;
@@ -125,18 +125,19 @@
   .container {
     max-width: 1700px;
   }
+	.hero {
+		grid-template-columns: 1fr 0.7rem;
+	}
   .heroTextContainer h1 {
-    font-size: 2.7rem;
+    font-size: 3.5rem;
     font-weight: 900;
   }
   .heroTextContainer h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   .heroImageContainer {
     grid-column: 2;
     grid-row: 1;
-    margin: 0 auto;
     width: 500px;
-    height: 450px;
   }
 }

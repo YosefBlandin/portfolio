@@ -52,13 +52,30 @@
 
 @media screen and (min-width: 1400px) {
   .projectElementContainer {
+    width: 275px;
+    height: 275px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .projectElementContainer {
     width: 305px;
     height: 305px;
   }
 }
-@media screen and (min-width: 1930px) {
+
+@media screen and (min-width: 1920px) {
   .projectElementContainer {
-    width: 355px;
-    height: 355px;
+    width: 356px;
+    height: 356px;
+		padding-bottom: 0.3rem;
   }
+	.projectElementContainer .projectElementText h5 {
+		font-size: 1.5rem;
+		margin-bottom: 3px;
+	}
+	.projectElementContainer .projectElementText p {
+		font-size: 1rem;
+		font-weight: 500;
+	}
 }
