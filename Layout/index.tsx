@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { FC, ReactNode, useState } from "react";
 import { SiCoderwall, SiLinkedin, SiGithub, SiTwitter } from "react-icons/si";
 import { HamburguerElements } from "./HamburguerElements";
@@ -7,10 +8,11 @@ import styles from "./styles.module.css";
 
 export const Layout: FC<ReactNode> = ({ children }) => {
   const [showSidebar, setShowSidebar] = useState(false);
+  const router = useRouter();
   return (
     <>
       <header className={styles.header}>
-        <p className={styles.headerLogo}>
+        <p className={styles.headerLogo} onClick={() => router.push("/")}>
           Yosef <span>Blandin</span>
         </p>
         <SiCoderwall

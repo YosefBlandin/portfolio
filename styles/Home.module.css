@@ -5,7 +5,10 @@
   color: black;
   min-height: 75vh;
 }
-
+.secondSectionContainer {
+  padding: 50px 0;
+  background-color: #000;
+}
 .hero {
   display: flex;
   flex-direction: column;
@@ -32,8 +35,8 @@
   border-radius: 10px;
 }
 .heroTextButton {
-  width: 240px;
-  height: 50px;
+  width: 270px;
+  height: 60px;
   margin-top: 30px;
   border: none;
   font-weight: bold;
@@ -42,7 +45,8 @@
   text-transform: uppercase;
   transition: 0.27s ease-in-out;
   border-radius: 5px;
-  background-color: #303030;
+  font-weight: 900;
+  background-color: #000;
 }
 .topProjectsContainer {
   display: flex;
@@ -52,9 +56,9 @@
 }
 
 .topProjectsTitle {
-  margin: 100px 0;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
   font-size: 1.4rem;
+  color: #fff;
   text-align: center;
 }
 
@@ -68,6 +72,7 @@
 @media screen and (min-width: 1200px) {
   .container {
     margin: 0 auto;
+    margin-top: 50px;
     max-width: 1150px;
   }
   .hero {
@@ -90,18 +95,19 @@
     grid-column: 2;
     grid-row: 1;
     margin: 0;
-		justify-self: end;
+    justify-self: end;
     width: 400px;
     height: 500px;
   }
   .topProjectsContainer {
     justify-content: center;
-		column-gap: 0;
+    column-gap: 0;
   }
-	.topProjectsTitle {
-		font-size: 2.2rem;
-		font-weight: 600;
-	}
+  .topProjectsTitle {
+    padding: 60px;
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
 }
 @media screen and (min-width: 1440px) {
   .container {
@@ -125,9 +131,9 @@
   .container {
     max-width: 1700px;
   }
-	.hero {
-		grid-template-columns: 1fr 0.7rem;
-	}
+  .hero {
+    grid-template-columns: 1fr 0.7rem;
+  }
   .heroTextContainer h1 {
     font-size: 3.5rem;
     font-weight: 900;

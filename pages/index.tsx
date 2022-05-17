@@ -13,35 +13,37 @@ import weatherImage from "../public/weather.svg";
 import managementImage from "../public/management.svg";
 import { HomeAboutInfo } from "../components/HomeAboutInfo";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
   console.log("Projects", projects);
+  const router = useRouter();
   const topFourProjects = [
     {
       projectName: "Yosef's Store",
       projectCategory: "E-commerce",
-      backgroundColor: "#90908a",
+      backgroundColor: "#fff",
       backgroundImage: ecommerceImage.src,
       route: "/projects/yosefStore",
     },
     {
       projectName: "Marvelnstagram",
       projectCategory: "Social Media Platform",
-      backgroundColor: "#837666",
+      backgroundColor: "#fff",
       backgroundImage: socialMediaImage.src,
       route: "/projects/marvelnstagram",
     },
     {
       projectName: "Weather App",
       projectCategory: "React App",
-      backgroundColor: "#eadbc8",
+      backgroundColor: "#fff",
       backgroundImage: weatherImage.src,
       route: "/projects/weatherApp",
     },
     {
       projectName: "Blandin's Users Manager",
       projectCategory: "Management",
-      backgroundColor: "#b99671",
+      backgroundColor: "#fff",
       backgroundImage: managementImage.src,
       route: "/projects/blandinsUsersManager",
     },
@@ -73,15 +75,24 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
                 Frontend Engineer <br /> foccussed on building web solutions
               </h1>
               <CarouselWords />
-              <button className={styles.heroTextButton}>see experience</button>
+              <button
+                className={styles.heroTextButton}
+                onClick={() => router.push("/projects")}
+              >
+                Visualize experience
+              </button>
             </div>
           </section>
+        </main>
+        <main className={styles.secondSectionContainer}>
           <h2 className={styles.topProjectsTitle}>Top projects</h2>
           <div className={styles.topProjectsContainer}>
             {topFourProjects.map((element, index) => (
               <ProjectElement key={index} {...element} />
             ))}
           </div>
+        </main>
+        <main className={styles.container} style={{ minHeight: "initial" }}>
           <HomeAboutInfo description={homeAboutInfo} />
         </main>
       </Layout>
@@ -99,12 +110,12 @@ export async function getServerSideProps() {
     query: gql`
       query getProjects {
         getProjects {
-          id,
-          projectName,
-          image,
-          introduction,
-          description,
-          url,
+          id
+          projectName
+          image
+          introduction
+          description
+          url
           techStack
         }
       }

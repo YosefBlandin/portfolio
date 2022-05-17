@@ -4,21 +4,23 @@
   justify-content: space-between;
   padding: 1.8rem 1rem;
   margin: 0 auto;
+  background-color: #000;
 }
 .headerLogo {
   font-size: 1.4rem;
   font-weight: bold;
   cursor: pointer;
+  color: #fff;
 }
 .headerLogo span {
-  color: #000;
+  color: #fff;
 }
 .headerHamburguer {
   position: absolute;
   top: 30px;
   bottom: 0;
-  right: 55px;
-  color: #000;
+  right: 1rem;
+  color: #fff;
   z-index: 214;
   font-size: 1.3rem;
   cursor: pointer;
@@ -59,14 +61,14 @@
 }
 
 @media screen and (min-width: 768px) {
-  .header {
+  /* .header {
     max-width: 650px;
-  }
+  } */
 }
 
 @media screen and (min-width: 1024px) {
   .header {
-    max-width: 900px;
+    padding: 1.8rem 40px;
   }
   .headerHamburguer {
     display: none;
@@ -78,20 +80,18 @@
 
 @media screen and (min-width: 1200px) {
   .header {
-    max-width: 1150px;
-		padding-right: 45px;
+    padding-right: 45px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .header {
-    max-width: 1400px;
-		padding-right: 55px;
+    padding: 1.8rem 40px;
   }
 }
 
 @media screen and (min-width: 1920px) {
   .header {
-    max-width: 1700px;
+    padding: 1.8rem 120px;
   }
 }
