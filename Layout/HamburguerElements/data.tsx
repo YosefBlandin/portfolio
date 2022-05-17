@@ -3,6 +3,7 @@ import { SiHomeassistant, SiOnnx, SiAboutdotme } from "react-icons/si";
 export const hamburguerElements = [
   {
     name: "Home",
+    external: false,
     route: "/",
     download: false,
     icon: <SiHomeassistant />,

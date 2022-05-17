@@ -1,10 +1,15 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import styles from "./styles.module.css";
 
 interface iProps {
-  data: Array<{ name: string; route: string; icon: FC; external: boolean }>;
+  data: Array<{
+    name: string;
+    route: string;
+    icon: ReactNode;
+    external: boolean;
+  }>;
   showSidebar: boolean;
 }
 

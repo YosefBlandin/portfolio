@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import styles from "./styles.module.css";
 
 interface iProps {
-  data: Array<{ name: string; route: string; icon: FC }>;
+  data: Array<{ name: string; route: string; icon: ReactNode }>;
 }
 
 export const HeaderElements: FC<iProps> = ({ data }) => {
