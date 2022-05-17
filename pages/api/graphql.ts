@@ -3,6 +3,7 @@ import { typeDefs } from "./schemas";
 import { resolvers } from "./resolvers";
 import connectDb from "../../db/config";
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
+import { NextApiRequest, NextApiResponse } from "next";
 
 connectDb();
 
@@ -20,7 +21,10 @@ export const config = {
 
 const startSever = apolloServer.start();
 
-export default async function handler(req, res) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   await startSever;
   await apolloServer.createHandler({ path: "/api/graphql" })(req, res);
 }
