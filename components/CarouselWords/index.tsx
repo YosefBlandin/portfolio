@@ -3,12 +3,12 @@ import styles from './styles.module.css'
 
 export const CarouselWords = () => {
   const textContainer = useRef(null)
-  const [word, setWord] = useState('Treating your page like a piece of art')
+  const [word, setWord] = useState(
+    'Changing the world delivering delightful user experiences and accesibility'
+  )
   const [nextText, setNextText] = useState(false)
   const [count, setCount] = useState(1)
-  const changeText = () => {
-    
-  }
+  const changeText = () => {}
 
   // useEffect(() => {
   //   const interval = setInterval(() => {
@@ -27,7 +27,7 @@ export const CarouselWords = () => {
   //   return () => clearInterval(interval)
 
   // }, [count])
- 
+
   return (
     <div>
       <h2 className={styles.title}>{word}</h2>
