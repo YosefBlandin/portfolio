@@ -4,29 +4,76 @@
   justify-content: space-between;
   padding: 1.8rem 1rem;
   margin: 0 auto;
-  background-color: #000;
+  background-color: #fff;
+  /* transition: 0.3s ease; */
+}
+.headerHidden {
+  opacity: 0;
+  background-color: white;
+}
+.headerFixed {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  opacity: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.8rem 1rem;
+  margin: 0 auto;
+  transition: 0.3s ease;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.headerFixedHidden {
+  opacity: 0;
 }
 .headerLogo {
   font-size: 1.4rem;
   font-weight: bold;
   cursor: pointer;
-  color: #fff;
+  color: #000;
 }
 .headerLogo span {
-  color: #fff;
+  color: #000;
 }
 .headerHamburguer {
   position: absolute;
   top: 30px;
   bottom: 0;
   right: 1rem;
-  color: #fff;
+  color: #000;
   z-index: 214;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   cursor: pointer;
   transition: 0.2s ease-in;
   transition-property: color;
 }
+
+.headerFixedLogo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+}
+.headerFixedLogo span {
+  color: #fff;
+}
+.headerFixedHamburguer {
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  right: 1rem;
+  color: #fff;
+  z-index: 214;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  transition-property: color;
+}
+
 .headerHamburguerActive {
   color: #fff;
 }
@@ -70,7 +117,13 @@
   .header {
     padding: 1.8rem 40px;
   }
+  .headerFixed {
+    padding: 1.8rem 40px;
+  }
   .headerHamburguer {
+    display: none;
+  }
+  .headerFixedHamburguer {
     display: none;
   }
   .footer {
@@ -82,16 +135,25 @@
   .header {
     padding-right: 45px;
   }
+  .headerFixed {
+    padding-right: 45px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .header {
     padding: 1.8rem 40px;
   }
+  .headerFixed {
+    padding: 1.8rem 40px;
+  }
 }
 
 @media screen and (min-width: 1920px) {
   .header {
+    padding: 1.8rem 120px;
+  }
+  .headerFixed {
     padding: 1.8rem 120px;
   }
 }

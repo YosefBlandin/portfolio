@@ -1,17 +1,57 @@
+import { m } from 'framer-motion'
 import { useRouter } from 'next/router'
-import { FC, ReactNode, useState } from 'react'
+import {
+  FC,
+  ReactChildren,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState
+} from 'react'
 import { SiCoderwall, SiLinkedin, SiGithub, SiTwitter } from 'react-icons/si'
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import { HamburguerElements } from './HamburguerElements'
 import { hamburguerElements } from './HamburguerElements/data'
 import { HeaderElements } from './HeaderElements'
 import styles from './styles.module.css'
 
-export const Layout: FC<ReactNode> = ({ children }) => {
+export default function Layout ({ children }: { children: ReactChildren }) {
   const [showSidebar, setShowSidebar] = useState(false)
+  const [headerClassName, setHeaderClassName] = useState(styles.header)
+  const [headerFixedClassName, setHeaderFixedClassName] = useState(
+    `${styles.headerFixed} ${styles.headerFixedHidden}`
+  )
   const router = useRouter()
+  const headerContainerRef = useRef(null)
+
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 1.0
+  }
+
+  const headerObserverEntries = useIntersectionObserver({
+    options,
+    target: headerContainerRef
+  })
+  console.log(headerObserverEntries)
+  useEffect(
+    function headerAnimation () {
+      if (headerObserverEntries?.isIntersecting === false) {
+        setHeaderClassName(`${styles.header} ${styles.headerHidden}`)
+        setHeaderFixedClassName(`${styles.headerFixed} ${styles.headerFixed}`)
+      } else {
+        setHeaderClassName(styles.header)
+        setHeaderFixedClassName(
+          `${styles.headerFixed} ${styles.headerFixedHidden}`
+        )
+      }
+    },
+    [headerObserverEntries]
+  )
   return (
     <>
-      <header className={styles.header}>
+      <header className={headerClassName} ref={headerContainerRef}>
         <p className={styles.headerLogo} onClick={() => router.push('/')}>
           Yosef <br />
           <span>Blandin</span>
@@ -28,7 +68,26 @@ export const Layout: FC<ReactNode> = ({ children }) => {
           data={hamburguerElements}
           showSidebar={showSidebar}
         />
-        <HeaderElements data={hamburguerElements} />
+        <HeaderElements data={hamburguerElements} textColor='#000' />
+      </header>
+      <header className={headerFixedClassName}>
+        <p className={styles.headerFixedLogo} onClick={() => router.push('/')}>
+          Yosef <br />
+          <span>Blandin</span>
+        </p>
+        <SiCoderwall
+          className={
+            showSidebar
+              ? `${styles.headerFixedHamburguer} ${styles.headerHamburguerActive}`
+              : `${styles.headerFixedHamburguer}`
+          }
+          onClick={() => setShowSidebar(!showSidebar)}
+        />
+        <HamburguerElements
+          data={hamburguerElements}
+          showSidebar={showSidebar}
+        />
+        <HeaderElements data={hamburguerElements} textColor='#fff' />
       </header>
       {children}
       <footer className={styles.footer}>

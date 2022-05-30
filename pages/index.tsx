@@ -1,8 +1,11 @@
 import { NextPage } from 'next'
+import dynamic from 'next/dynamic'
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Layout } from '../Layout'
+const Layout = dynamic(() => import('../Layout'), {
+  ssr: false
+})
 import { CarouselWords } from '../components/CarouselWords'
 import heroImage from '../public/yosefAvatar.png'
 import styles from '../styles/Home.module.css'
@@ -60,21 +63,12 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
       <Layout>
         <main className={styles.container}>
           <section className={styles.hero}>
-            <div className={styles.heroImageContainer}>
-              <Image
-                src={heroImage}
-                width='600px'
-                height='600px'
-                alt='Hero laptop and smartphone interconnected'
-                objectFit='contain'
-                className={styles.heroImage}
-              />
-            </div>
             <div className={styles.heroTextContainer}>
-              <h1>
-                Developing World-Class <br /> Web Applications
-              </h1>
-              <CarouselWords />
+              <h1>Developing the Frontend of the world</h1>
+              <h2>
+                Experience working with top tier technologies such as React JS,
+                Next JS, Typescript and more
+              </h2>
               <button
                 className={styles.heroTextButton}
                 onClick={() => router.push('/projects')}
@@ -91,9 +85,6 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
               <ProjectElement key={index} {...element} />
             ))}
           </div>
-        </main>
-        <main className={styles.container} style={{ minHeight: 'initial' }}>
-          <HomeAboutInfo description={homeAboutInfo} />
         </main>
       </Layout>
     </div>

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   padding: 2rem 1rem;
+  padding-top: 4rem;
   color: black;
   min-height: 75vh;
 }
@@ -16,13 +17,21 @@
   text-align: center;
   letter-spacing: 0.08rem;
 }
+.heroTextContainer {
+  display: grid;
+  row-gap: 50px;
+  justify-content: center;
+  justify-items: center;
+}
 .hero h1 {
   font-size: 1.5rem;
+  text-align: center;
 }
 .hero h2 {
   margin-top: 1rem;
   font-weight: 500;
   font-size: 1.2rem;
+  text-align: center;
   color: rgb(70, 70, 70);
 }
 .heroImageContainer {
@@ -64,7 +73,7 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 700px;
+    max-width: 1000px;
     margin: 0 auto;
   }
 }
@@ -73,6 +82,17 @@
   .topProjectsContainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+  }
+  .heroTextContainer {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .heroTextContainer h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+  }
+  .heroTextContainer h2 {
+    font-size: 1.5rem;
   }
   .secondSectionContainer {
     padding: 50px 10px;
@@ -84,19 +104,19 @@
   .container {
     margin: 0 auto;
     margin-top: 50px;
-    max-width: 1150px;
+    max-width: 1200px;
   }
   .hero {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
   }
   .heroTextContainer {
     grid-column: 1;
     grid-row: 1;
     text-align: start;
+    max-width: 1200px;
   }
   .heroTextContainer h1 {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     font-weight: 900;
   }
   .heroTextContainer h2 {
@@ -129,6 +149,9 @@
   .container {
     max-width: 1400px;
   }
+  .heroTextContainer {
+    max-width: 1600px;
+  }
   .heroTextContainer h1 {
     font-size: 2.5rem;
   }
@@ -145,17 +168,17 @@
 
 @media screen and (min-width: 1920px) {
   .container {
-    max-width: 1700px;
+    max-width: 1920px;
   }
-  .hero {
-    grid-template-columns: 1fr 0.7fr;
+  .heroTextContainer {
+    max-width: 1200px;
   }
   .heroTextContainer h1 {
-    font-size: 3.5rem;
+    font-size: 3.9rem;
     font-weight: 900;
   }
   .heroTextContainer h2 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
   .heroImageContainer {
     grid-column: 2;
