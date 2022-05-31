@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import { NextPage } from 'next'
-import dynamic from 'next/dynamic'
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
 import { IoMailOutline } from 'react-icons/io5'
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 const Layout = dynamic(() => import('../Layout'), {
   ssr: false
 })
@@ -103,33 +103,33 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
   )
 }
 
-export async function getServerSideProps () {
-  const client = new ApolloClient({
-    uri: 'http://localhost:3000/api/graphql',
-    cache: new InMemoryCache()
-  })
+// export async function getServerSideProps () {
+//   const client = new ApolloClient({
+//     uri: 'http://localhost:3000/api/graphql',
+//     cache: new InMemoryCache()
+//   })
 
-  const { data } = await client.query({
-    query: gql`
-      query getProjects {
-        getProjects {
-          id
-          projectName
-          image
-          introduction
-          description
-          url
-          techStack
-        }
-      }
-    `
-  })
-  console.log(data)
-  return {
-    props: {
-      projects: data?.getProjects
-    }
-  }
-}
+//   const { data } = await client.query({
+//     query: gql`
+//       query getProjects {
+//         getProjects {
+//           id
+//           projectName
+//           image
+//           introduction
+//           description
+//           url
+//           techStack
+//         }
+//       }
+//     `
+//   })
+//   console.log(data)
+//   return {
+//     props: {
+//       projects: data?.getProjects
+//     }
+//   }
+// }
 
 export default Home
