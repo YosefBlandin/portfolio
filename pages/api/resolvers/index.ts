@@ -1,21 +1,21 @@
-import axios from "axios";
-import Project from "../../../db/models";
+import axios from 'axios'
+import Project from '../../../db/models'
 
 interface iProject {
-  id: string;
-  projectName: string;
-  image: string;
-  introduction: string;
-  url: string;
-  description: string;
-  techStack: string[];
+  id: string
+  projectName: string
+  image: string
+  introduction: string
+  url: string
+  description: string
+  techStack: string[]
 }
 
 export const resolvers = {
   Query: {
     getProjects: async () => {
       try {
-        const projects = await Project.find();
+        const projects = await Project.find()
         return projects?.map(
           ({
             id,
@@ -24,7 +24,7 @@ export const resolvers = {
             introduction,
             url,
             description,
-            techStack,
+            techStack
           }: iProject) => ({
             id,
             projectName,
@@ -32,17 +32,17 @@ export const resolvers = {
             introduction,
             url,
             description,
-            techStack,
+            techStack
           })
-        );
+        )
       } catch (error) {
-        throw error;
+        throw error
       }
     },
     getProject: async (_: string, { projectName }: { projectName: string }) => {
       try {
-        const project = await Project.find({ projectName: projectName });
-        console.log("PROJECT", project);
+        const project = await Project.find({ projectName: projectName })
+        console.log('PROJECT', project)
         return {
           id: project?.[0]?._id,
           projectName: project?.[0]?.projectName,
@@ -50,48 +50,51 @@ export const resolvers = {
           introduction: project?.[0]?.introduction,
           url: project?.[0]?.url,
           description: project?.[0]?.description,
-          techStack: project?.[0]?.techStack,
-        };
+          techStack: project?.[0]?.techStack
+        }
       } catch (error) {
-        throw error;
+        throw error
       }
-    },
+    }
   },
   Mutation: {
-    newProject: async (_, { input }) => {
+    newProject: async (_: string, { input }: { input: string }) => {
       try {
-        const project = new Project(input);
+        const project = new Project(input)
 
-        const result = await project.save();
+        const result = await project.save()
 
-        return result;
+        return result
       } catch (err) {
-        console.log(err);
+        console.log(err)
       }
     },
-    updateProject: async (_, { id, input }) => {
-      let project = await Project.findById(id);
+    updateProject: async (
+      _: string,
+      { id, input }: { id: string; input: {} }
+    ) => {
+      let project = await Project.findById(id)
 
       if (!project) {
-        throw new Error("Project not found");
+        throw new Error('Project not found')
       }
 
       project = await Project.findOneAndUpdate({ _id: id }, input, {
-        new: true,
-      });
+        new: true
+      })
 
-      return project;
+      return project
     },
-    deleteProject: async (_, { id }) => {
-      const project = await Project.findById(id);
+    deleteProject: async (_: string, { id }: { id: string }) => {
+      const project = await Project.findById(id)
 
       if (!project) {
-        throw new Error("Project not found");
+        throw new Error('Project not found')
       }
 
-      await Project.findOneAndDelete({ _id: id });
+      await Project.findOneAndDelete({ _id: id })
 
-      return "Product deleted";
-    },
-  },
-};
+      return 'Product deleted'
+    }
+  }
+}
