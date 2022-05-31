@@ -1,22 +1,21 @@
+/* eslint-disable react/no-unescaped-entities */
 import { NextPage } from 'next'
 import dynamic from 'next/dynamic'
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
+import { IoMailOutline } from 'react-icons/io5'
 import Head from 'next/head'
-import Image from 'next/image'
 const Layout = dynamic(() => import('../Layout'), {
   ssr: false
 })
-import { CarouselWords } from '../components/CarouselWords'
-import heroImage from '../public/yosefAvatar.png'
 import styles from '../styles/Home.module.css'
 import { ProjectElement } from '../components/ProjectElement'
 import ecommerceImage from '../public/ecommerce.svg'
 import socialMediaImage from '../public/socialMedia.svg'
 import weatherImage from '../public/weather.svg'
 import managementImage from '../public/management.svg'
-import { HomeAboutInfo } from '../components/HomeAboutInfo'
-import axios from 'axios'
 import { useRouter } from 'next/router'
+import { TitleSectionSplitter } from '../components/TitleSectionSplitter'
+import { Button } from '../components/Button'
 
 const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
   console.log('Projects', projects)
@@ -69,23 +68,36 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
                 Experience working with top tier technologies such as React JS,
                 Next JS, Typescript and more
               </h2>
-              <button
-                className={styles.heroTextButton}
-                onClick={() => router.push('/projects')}
-              >
-                Visualize experience
-              </button>
+              <Button title={'Visualize experience'} loading={false} />
             </div>
           </section>
         </main>
-        <main className={styles.secondSectionContainer}>
-          <h2 className={styles.topProjectsTitle}>Study cases for you</h2>
+        <section className={styles.secondSectionContainer}>
+          <TitleSectionSplitter title={'Study cases'} />
           <div className={styles.topProjectsContainer}>
             {topFourProjects.map((element, index) => (
               <ProjectElement key={index} {...element} />
             ))}
           </div>
-        </main>
+        </section>
+        <section className={styles.contactSectionContainer}>
+          <div className={styles.contactSectionTextContainer}>
+            <h3 className={styles.contactSectionTextTitle}>
+              Don't miss the opportunity to have a conversation with me
+            </h3>
+            <p className={styles.contactSectionTextDescription}>
+              Leave your email and I will send you more information about my
+              professional experience
+            </p>
+          </div>
+          <div className={styles.contactSectionFormContainer}>
+            <label>
+              <IoMailOutline />
+              <input placeholder='example@domain.com' />
+            </label>
+            <Button color='black' loading={false} title={'Subscribe'} />
+          </div>
+        </section>
       </Layout>
     </div>
   )
@@ -112,7 +124,7 @@ export async function getServerSideProps () {
       }
     `
   })
-  console.log('BAM NIGGI', data)
+  console.log(data)
   return {
     props: {
       projects: data?.getProjects

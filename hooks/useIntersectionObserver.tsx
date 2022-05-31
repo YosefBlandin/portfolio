@@ -9,11 +9,33 @@ interface iUseIntersectionObserverParams {
   target: MutableRefObject<null>
 }
 
+interface Bounds {
+  readonly height: number
+  readonly width: number
+  readonly top: number
+  readonly left: number
+  readonly right: number
+  readonly bottom: number
+}
+
+interface IntersectionObserverEntry {
+  readonly time: number
+  readonly rootBounds: Bounds
+  readonly boundingClientRect: Bounds
+  readonly intersectionRect: Bounds
+  readonly intersectionRatio: number
+  readonly target: Element
+  readonly isIntersecting: boolean
+  readonly isVisible: boolean
+}
+
 export const useIntersectionObserver = ({
   options,
   target
 }: iUseIntersectionObserverParams) => {
-  const [entries, setEntries] = useState({})
+  const [entries, setEntries] = useState<
+    IntersectionObserverEntry | { isIntersecting: boolean }
+  >()
 
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => setEntries(entry))

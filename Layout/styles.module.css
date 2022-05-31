@@ -24,7 +24,7 @@
   margin: 0 auto;
   transition: 0.3s ease;
   backdrop-filter: blur(6px);
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 1);
 }
 
 .headerFixedHidden {
@@ -37,7 +37,8 @@
   color: #000;
 }
 .headerLogo span {
-  color: #000;
+  color: #0070f3;
+  text-shadow: 0 4px 14px rgb(0 118 255 / 39%);
 }
 .headerHamburguer {
   position: absolute;
@@ -59,7 +60,8 @@
   color: #fff;
 }
 .headerFixedLogo span {
-  color: #fff;
+  color: #0070f3;
+  text-shadow: 0 4px 14px rgb(0 118 255 / 39%);
 }
 .headerFixedHamburguer {
   position: absolute;
@@ -78,14 +80,20 @@
   color: #fff;
 }
 .footer {
+  width: 100%;
+  border-top: 1px solid #eaeaea;
+  background-color: #fafafa;
+}
+.footer > div {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 500px;
   margin: 0 auto;
+  background-color: #fafafa;
   margin-top: 3rem;
 }
-.footer p {
+.footer div p {
   margin-bottom: 0.8rem;
 }
 .footerContact {
@@ -98,6 +106,7 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+  font-size: 1.2rem;
   transition: transform 0.15s ease-in;
 }
 .footer .footerContact a:hover {
@@ -126,8 +135,8 @@
   .headerFixedHamburguer {
     display: none;
   }
-  .footer {
-    margin-bottom: 1.2rem;
+  .footer div {
+    padding-bottom: 1.2rem;
   }
 }
 
@@ -142,18 +151,18 @@
 
 @media screen and (min-width: 1440px) {
   .header {
-    padding: 1.8rem 40px;
+    padding: 2.1rem 40px;
   }
   .headerFixed {
-    padding: 1.8rem 40px;
+    padding: 2.1rem 40px;
   }
 }
 
 @media screen and (min-width: 1920px) {
   .header {
-    padding: 1.8rem 120px;
+    padding: 2.5rem 120px;
   }
   .headerFixed {
-    padding: 1.8rem 120px;
+    padding: 2.5rem 120px;
   }
 }
