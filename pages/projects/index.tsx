@@ -1,6 +1,9 @@
-import { NextPage } from "next";
-import Head from "next/head";
-import { Layout } from "../../Layout";
+import { NextPage } from 'next'
+import Head from 'next/head'
+import dynamic from 'next/dynamic'
+const Layout = dynamic(() => import('../../Layout'), {
+  ssr: false
+})
 
 const Projects: NextPage = () => {
   return (
@@ -10,7 +13,7 @@ const Projects: NextPage = () => {
       </Head>
       <h1>Project</h1>
     </Layout>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects
