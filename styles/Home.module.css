@@ -270,7 +270,8 @@
     padding-bottom: 100px;
   }
   .contactSectionContainer {
-    padding: 100px 280px;
+    padding: 100px 0px;
+    max-width: 1400px;
   }
   .contactSectionTextTitle {
     font-size: 2rem;

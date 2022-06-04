@@ -1,59 +1,57 @@
 /* eslint-disable react/no-unescaped-entities */
-import { NextPage } from 'next'
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
-import { IoMailOutline } from 'react-icons/io5'
-import Head from 'next/head'
-import dynamic from 'next/dynamic'
-const Layout = dynamic(() => import('../Layout'), {
-  ssr: false
-})
-import styles from '../styles/Home.module.css'
-import { ProjectElement } from '../components/ProjectElement'
-import ecommerceImage from '../public/ecommerce.svg'
-import socialMediaImage from '../public/socialMedia.svg'
-import weatherImage from '../public/weather.svg'
-import managementImage from '../public/management.svg'
-import { useRouter } from 'next/router'
-import { TitleSectionSplitter } from '../components/TitleSectionSplitter'
-import { Button } from '../components/Button'
+import { NextPage } from "next";
+import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import { IoMailOutline } from "react-icons/io5";
+import Head from "next/head";
+import dynamic from "next/dynamic";
+const Layout = dynamic(() => import("../Layout"), {
+  ssr: false,
+});
+import styles from "../styles/Home.module.css";
+import { ProjectElement } from "../components/ProjectElement";
+import ecommerceImage from "../public/ecommerce.svg";
+import socialMediaImage from "../public/socialMedia.svg";
+import weatherImage from "../public/weather.svg";
+import managementImage from "../public/management.svg";
+import { TitleSectionSplitter } from "../components/TitleSectionSplitter";
+import { Button } from "../components/Button";
 
 const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
-  console.log('Projects', projects)
-  const router = useRouter()
+  console.log("Projects", projects);
   const topFourProjects = [
     {
       projectName: "Yosef's Store",
-      projectCategory: 'E-commerce',
-      backgroundColor: '#fff',
+      projectCategory: "E-commerce",
+      backgroundColor: "#fff",
       backgroundImage: ecommerceImage.src,
-      route: '/projects/yosefStore'
+      route: "/projects/yosefStore",
     },
     {
-      projectName: 'Marvelnstagram',
-      projectCategory: 'Social Media Platform',
-      backgroundColor: '#fff',
+      projectName: "Marvelnstagram",
+      projectCategory: "Social Media Platform",
+      backgroundColor: "#fff",
       backgroundImage: socialMediaImage.src,
-      route: '/projects/marvelnstagram'
+      route: "/projects/marvelnstagram",
     },
     {
-      projectName: 'Weather App',
-      projectCategory: 'React App',
-      backgroundColor: '#fff',
+      projectName: "Weather App",
+      projectCategory: "React App",
+      backgroundColor: "#fff",
       backgroundImage: weatherImage.src,
-      route: '/projects/weatherApp'
+      route: "/projects/weatherApp",
     },
     {
       projectName: "Blandin's Users Manager",
-      projectCategory: 'Management',
-      backgroundColor: '#fff',
+      projectCategory: "Management",
+      backgroundColor: "#fff",
       backgroundImage: managementImage.src,
-      route: '/projects/blandinsUsersManager'
-    }
-  ]
+      route: "/projects/blandinsUsersManager",
+    },
+  ];
   const homeAboutInfo = `I do like to push
 	myself out of the confort zone, I've had some problems to solve and in
 	those moments, I feel like I'm learning and improving my professional
-	abilities. I enjoy to work with a team and to be helpful as much as posible, we are more productive together.`
+	abilities. I enjoy to work with a team and to be helpful as much as posible, we are more productive together.`;
   return (
     <div>
       <Head>
@@ -63,17 +61,17 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
         <main className={styles.container}>
           <section className={styles.hero}>
             <div className={styles.heroTextContainer}>
-              <h1>Developing the Frontend of the world</h1>
+              <h1>Developing the Frontend of the World</h1>
               <h2>
                 Experience working with top tier technologies such as React JS,
                 Next JS, Typescript and more
               </h2>
-              <Button title={'Visualize experience'} loading={false} />
+              <Button title={"Visualize experience"} loading={false} />
             </div>
           </section>
         </main>
         <section className={styles.secondSectionContainer}>
-          <TitleSectionSplitter title={'Study cases'} />
+          <TitleSectionSplitter title={"Study cases"} />
           <div className={styles.topProjectsContainer}>
             {topFourProjects.map((element, index) => (
               <ProjectElement key={index} {...element} />
@@ -93,43 +91,42 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
           <div className={styles.contactSectionFormContainer}>
             <label>
               <IoMailOutline />
-              <input placeholder='example@domain.com' />
+              <input placeholder="example@domain.com" />
             </label>
-            <Button color='black' loading={false} title={'Subscribe'} />
+            <Button color="black" loading={false} title={"Subscribe"} />
           </div>
         </section>
       </Layout>
     </div>
-  )
+  );
+};
+
+export async function getServerSideProps() {
+  const client = new ApolloClient({
+    uri: "http://localhost:3000/api/graphql",
+    cache: new InMemoryCache(),
+  });
+
+  const { data } = await client.query({
+    query: gql`
+      query getProjects {
+        getProjects {
+          id
+          projectName
+          image
+          introduction
+          description
+          url
+          techStack
+        }
+      }
+    `,
+  });
+  return {
+    props: {
+      projects: data?.getProjects,
+    },
+  };
 }
 
-// export async function getServerSideProps () {
-//   const client = new ApolloClient({
-//     uri: 'http://localhost:3000/api/graphql',
-//     cache: new InMemoryCache()
-//   })
-
-//   const { data } = await client.query({
-//     query: gql`
-//       query getProjects {
-//         getProjects {
-//           id
-//           projectName
-//           image
-//           introduction
-//           description
-//           url
-//           techStack
-//         }
-//       }
-//     `
-//   })
-//   console.log(data)
-//   return {
-//     props: {
-//       projects: data?.getProjects
-//     }
-//   }
-// }
-
-export default Home
+export default Home;
