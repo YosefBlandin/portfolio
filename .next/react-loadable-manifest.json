@@ -1,0 +1,28 @@
+{
+  "index.tsx -> ../Layout": {
+    "id": 1530,
+    "files": [
+      "static/chunks/d0447323.dd01028a99904d97.js",
+      "static/css/ca64ef0edccff479.css",
+      "static/chunks/614.591b91b1fa0ad5f8.js"
+    ]
+  },
+  "projects/[slug]/index.tsx -> ../../../Layout": {
+    "id": 1530,
+    "files": [
+      "static/chunks/d0447323.dd01028a99904d97.js",
+      "static/chunks/503-afb2766dfe6c6847.js",
+      "static/css/ca64ef0edccff479.css",
+      "static/chunks/530.aa2e30af13747d3a.js"
+    ]
+  },
+  "projects/index.tsx -> ../../Layout": {
+    "id": 1530,
+    "files": [
+      "static/chunks/d0447323.dd01028a99904d97.js",
+      "static/chunks/503-afb2766dfe6c6847.js",
+      "static/css/ca64ef0edccff479.css",
+      "static/chunks/530.aa2e30af13747d3a.js"
+    ]
+  }
+}
