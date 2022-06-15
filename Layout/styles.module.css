@@ -27,6 +27,10 @@
   background-color: rgba(0, 0, 0, 1);
 }
 
+.headerFixed > ul {
+  height: 100vh;
+}
+
 .headerFixedHidden {
   opacity: 0;
 }
@@ -128,6 +132,9 @@
   }
   .headerFixed {
     padding: 1.8rem 40px;
+  }
+  .headerFixed > ul {
+    height: initial;
   }
   .headerHamburguer {
     display: none;

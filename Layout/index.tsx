@@ -1,54 +1,57 @@
-import { m } from "framer-motion";
-import { useRouter } from "next/router";
-import { FC, ReactChild, useEffect, useRef, useState } from "react";
-import { SiCoderwall, SiLinkedin, SiGithub, SiTwitter } from "react-icons/si";
-import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
-import { HamburguerElements } from "./HamburguerElements";
-import { hamburguerElements } from "./HamburguerElements/data";
-import { HeaderElements } from "./HeaderElements";
-import styles from "./styles.module.css";
+import { m } from 'framer-motion'
+import { useRouter } from 'next/router'
+import { FC, ReactChild, useEffect, useRef, useState } from 'react'
+import { SiCoderwall, SiLinkedin, SiGithub, SiTwitter } from 'react-icons/si'
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
+import { HamburguerElements } from './HamburguerElements'
+import { hamburguerElements } from './HamburguerElements/data'
+import { HeaderElements } from './HeaderElements'
+import styles from './styles.module.css'
 
-export default function Layout({
-  children,
+export default function Layout ({
+  children
 }: {
-  children: ReactChild | ReactChild[];
+  children: ReactChild | ReactChild[]
 }) {
-  const [showSidebar, setShowSidebar] = useState(false);
-  const [headerClassName, setHeaderClassName] = useState(styles.header);
+  const [isIntersecting, setIsIntersecting] = useState(false)
+  const [showSidebar, setShowSidebar] = useState(false)
+  const [headerClassName, setHeaderClassName] = useState(styles.header)
   const [headerFixedClassName, setHeaderFixedClassName] = useState(
     `${styles.headerFixed} ${styles.headerFixedHidden}`
-  );
-  const router = useRouter();
-  const headerContainerRef = useRef(null);
+  )
+  const router = useRouter()
+  const headerContainerRef = useRef(null)
 
   const options = {
     root: null,
-    rootMargin: "0px",
-    threshold: 1.0,
-  };
+    rootMargin: '0px',
+    threshold: 1.0
+  }
 
   const headerObserverEntries = useIntersectionObserver({
     options,
-    target: headerContainerRef,
-  });
+    target: headerContainerRef
+  })
   useEffect(
-    function headerAnimation() {
+    function headerAnimation () {
       if (headerObserverEntries?.isIntersecting === false) {
-        setHeaderClassName(`${styles.header} ${styles.headerHidden}`);
-        setHeaderFixedClassName(`${styles.headerFixed} ${styles.headerFixed}`);
+        setIsIntersecting(false)
+        setHeaderClassName(`${styles.header} ${styles.headerHidden}`)
+        setHeaderFixedClassName(`${styles.headerFixed}`)
       } else {
-        setHeaderClassName(styles.header);
+        setIsIntersecting(true)
+        setHeaderClassName(styles.header)
         setHeaderFixedClassName(
           `${styles.headerFixed} ${styles.headerFixedHidden}`
-        );
+        )
       }
     },
     [headerObserverEntries]
-  );
+  )
   return (
     <>
       <header className={headerClassName} ref={headerContainerRef}>
-        <p className={styles.headerLogo} onClick={() => router.push("/")}>
+        <p className={styles.headerLogo} onClick={() => router.push('/')}>
           Yosef <span>Blandin</span>
         </p>
         <SiCoderwall
@@ -63,10 +66,10 @@ export default function Layout({
           data={hamburguerElements}
           showSidebar={showSidebar}
         />
-        <HeaderElements data={hamburguerElements} textColor="#000" />
+        <HeaderElements data={hamburguerElements} textColor='#000' />
       </header>
       <header className={headerFixedClassName}>
-        <p className={styles.headerFixedLogo} onClick={() => router.push("/")}>
+        <p className={styles.headerFixedLogo} onClick={() => router.push('/')}>
           Yosef
           <span> Blandin</span>
         </p>
@@ -82,7 +85,8 @@ export default function Layout({
           data={hamburguerElements}
           showSidebar={showSidebar}
         />
-        <HeaderElements data={hamburguerElements} textColor="#fff" />
+
+        <HeaderElements data={hamburguerElements} textColor='#fff' />
       </header>
       {children}
       <footer className={styles.footer}>
@@ -91,25 +95,25 @@ export default function Layout({
           <p>Yosef Blandin All Rights Reserved</p>
           <div className={styles.footerContact}>
             <a
-              href="https://www.linkedin.com/in/yosef-blandin-a587241b0/"
-              target="_blank"
-              rel="noreferrer noopener"
+              href='https://www.linkedin.com/in/yosef-blandin-a587241b0/'
+              target='_blank'
+              rel='noreferrer noopener'
             >
               <SiLinkedin />
               <span>LinkedIn</span>
             </a>
             <a
-              href="https://github.com/YosefBlandin"
-              target="_blank"
-              rel="noreferrer noopener"
+              href='https://github.com/YosefBlandin'
+              target='_blank'
+              rel='noreferrer noopener'
             >
               <SiGithub />
               <span>Github</span>
             </a>
             <a
-              href="https://twitter.com/YosefBlandin"
-              target="_blank"
-              rel="noreferrer noopener"
+              href='https://twitter.com/YosefBlandin'
+              target='_blank'
+              rel='noreferrer noopener'
             >
               <SiTwitter />
               <span>Twitter</span>
@@ -118,5 +122,5 @@ export default function Layout({
         </div>
       </footer>
     </>
-  );
+  )
 }

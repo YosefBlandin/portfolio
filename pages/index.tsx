@@ -68,13 +68,15 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
                 Experience working with top tier technologies such as React JS,
                 Next JS, Typescript and more
               </h2>
-              <Button size={'lg'} variant={'primary'} height={{ lg: '60px' }}>
-                Visualize experience
-              </Button>
+              <a href='#projects'>
+                <Button size={'lg'} variant={'primary'} height={{ lg: '60px' }}>
+                  Visualize experience
+                </Button>
+              </a>
             </div>
           </section>
         </main>
-        <section className={styles.secondSectionContainer}>
+        <section id='projects' className={styles.secondSectionContainer}>
           <TitleSectionSplitter title={'Study cases'} />
           <div className={styles.topProjectsContainer}>
             {topFourProjects.map((element, index) => (
