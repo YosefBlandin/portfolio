@@ -2,6 +2,12 @@
 import { NextPage } from 'next'
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
 import { IoMailOutline } from 'react-icons/io5'
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription
+} from '@chakra-ui/react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 const Layout = dynamic(() => import('../Layout'), {
@@ -17,9 +23,14 @@ import { useRouter } from 'next/router'
 import { TitleSectionSplitter } from '../components/TitleSectionSplitter'
 import { ButtonComponent } from '../components/ButtonComponent'
 import { Button, Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
+import { useState } from 'react'
+import axios from 'axios'
 
 const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
-  console.log('Projects', projects)
+  const [email, setEmail] = useState<string>('')
+  const [errorMessage, setErrorMessage] = useState<string>('')
+  const [response, setResponse] = useState<string>('')
+  const [loading, setLoading] = useState(false)
   const topFourProjects = [
     {
       projectName: "Yosef's Store",
@@ -54,6 +65,26 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
 	myself out of the confort zone, I've had some problems to solve and in
 	those moments, I feel like I'm learning and improving my professional
 	abilities. I enjoy to work with a team and to be helpful as much as posible, we are more productive together.`
+  const handleClick = async () => {
+    setLoading(true)
+    try {
+      const fetchData = await axios.post('/api/sendMail', {
+        email: email
+      })
+      console.log('FETCH', fetchData)
+      setErrorMessage('')
+      setResponse('Subscribed successfully')
+      setLoading(false)
+    } catch (e) {
+      setResponse('')
+      setLoading(false)
+      const errorParsed = JSON.parse(e.response.data.error.response.text)
+      if (errorParsed.title === 'Member Exists') {
+        setErrorMessage('Please try again with other email')
+      }
+      console.error()
+    }
+  }
   return (
     <div>
       <Head>
@@ -111,11 +142,43 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
                     base: 'md'
                   }}
                   type={'email'}
+                  onChange={e => setEmail(e.target.value)}
                   placeholder='example@domain.com'
                 />
               </InputGroup>
             </label>
-            <Button variant={'secondary'}>Subscribe</Button>
+            {errorMessage.length > 0 ? (
+              <Alert
+                status='error'
+                marginTop={'10px'}
+                maxWidth={'372px'}
+                width={'100%'}
+              >
+                <AlertIcon />
+                <AlertTitle fontSize={'0.9rem'}>{errorMessage}</AlertTitle>
+              </Alert>
+            ) : response.length > 0 ? (
+              <Alert
+                status='success'
+                marginTop={'10px'}
+                maxWidth={'372px'}
+                width={'100%'}
+              >
+                <AlertIcon />
+                <AlertTitle fontSize={'0.9rem'}>{response}</AlertTitle>
+              </Alert>
+            ) : (
+              false
+            )}
+            <Button
+              isLoading={loading}
+              onClick={handleClick}
+              variant={'secondary'}
+              maxWidth={{ base: '372px' }}
+              marginTop={'10px'}
+            >
+              Subscribe
+            </Button>
           </div>
         </section>
       </Layout>
