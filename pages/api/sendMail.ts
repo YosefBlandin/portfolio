@@ -22,7 +22,7 @@ export default async function handler (
     if (fetch.status === 'subscribed') {
       res.status(200).json({ status: 'subscribed' })
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error(error)
     res.status(error?.status).json({ error: error })
   }

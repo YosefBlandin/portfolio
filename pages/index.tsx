@@ -75,7 +75,7 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
       setErrorMessage('')
       setResponse('Subscribed successfully')
       setLoading(false)
-    } catch (e) {
+    } catch (e: any) {
       setResponse('')
       setLoading(false)
       const errorParsed = JSON.parse(e.response.data.error.response.text)
