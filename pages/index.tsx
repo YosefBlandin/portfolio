@@ -123,7 +123,10 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
 
 export async function getServerSideProps () {
   const client = new ApolloClient({
-    uri: 'http://localhost:3000/api/graphql',
+    uri:
+      process.env?.isProduction === 'true'
+        ? 'http://localhost:3000/api/graphql'
+        : 'https://web-yosefblandin.vercel.app/api/graphql',
     cache: new InMemoryCache()
   })
 
