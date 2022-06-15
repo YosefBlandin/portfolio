@@ -1,14 +1,5 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/admin": "pages/admin.html",
-  "/api/graphql": "pages/api/graphql.js",
-  "/api/resolvers": "pages/api/resolvers.js",
-  "/api/schemas": "pages/api/schemas.js",
-  "/api/sendMail": "pages/api/sendMail.js",
-  "/": "pages/index.html",
-  "/projects/[slug]": "pages/projects/[slug].html",
-  "/projects": "pages/projects.html",
-  "/404": "pages/404.html"
+  "/_document": "pages/_document.js"
 }

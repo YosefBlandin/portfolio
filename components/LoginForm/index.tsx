@@ -1,40 +1,40 @@
-import { FormEvent, SyntheticEvent, useState } from "react";
-import { Button } from "../Button";
-import { InputForm } from "../InputForm";
-import styles from "./styles.module.css";
+import { FormEvent, SyntheticEvent, useState } from 'react'
+import { ButtonComponent } from '../ButtonComponent'
+import { InputForm } from '../InputForm'
+import styles from './styles.module.css'
 
 export const LoginForm = () => {
-  const [emailValue, setEmailValue] = useState<string>("");
-  const [passwordValue, setPasswordValue] = useState<string>("");
-  console.log("EMAIL VALUE", emailValue);
-  console.log("PASSWORD VALUE", passwordValue);
+  const [emailValue, setEmailValue] = useState<string>('')
+  const [passwordValue, setPasswordValue] = useState<string>('')
+  console.log('EMAIL VALUE', emailValue)
+  console.log('PASSWORD VALUE', passwordValue)
   const emailInputProps = {
     labelProps: {
-      htmlFor: "email",
+      htmlFor: 'email'
     },
     inputProps: {
-      name: "email",
+      name: 'email',
       value: emailValue,
       onChange: (e: FormEvent<HTMLInputElement>) =>
-        setEmailValue(e.currentTarget.value),
-    },
-  };
+        setEmailValue(e.currentTarget.value)
+    }
+  }
   const passwordInputProps = {
     labelProps: {
-      htmlFor: "password",
+      htmlFor: 'password'
     },
     inputProps: {
-      name: "password",
+      name: 'password',
       value: passwordValue,
       onChange: (e: FormEvent<HTMLInputElement>) =>
-        setPasswordValue(e.currentTarget.value),
-    },
-  };
+        setPasswordValue(e.currentTarget.value)
+    }
+  }
   return (
     <form className={styles.loginForm}>
-      <InputForm {...emailInputProps} labelTitle="Email" />
-      <InputForm {...passwordInputProps} labelTitle="Password" />
-      <Button title="log in" loading={false} />
+      <InputForm {...emailInputProps} labelTitle='Email' />
+      <InputForm {...passwordInputProps} labelTitle='Password' />
+      <ButtonComponent title='log in' loading={false} />
     </form>
-  );
-};
+  )
+}
