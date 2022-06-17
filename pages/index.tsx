@@ -30,18 +30,18 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
   
   const topFourProjects = [
     {
-      projectName: "Yosef's Store",
+      projectName: "Machete Store",
       projectCategory: 'E-commerce',
       backgroundColor: '#fff',
       backgroundImage: ecommerceImage.src,
-      route: '/projects/yosefStore'
+      route: 'https://machete-store-yosefblandin.vercel.app/'
     },
     {
-      projectName: 'Marvelnstagram',
+      projectName: 'Petgram',
       projectCategory: 'Social Media Platform',
       backgroundColor: '#fff',
       backgroundImage: socialMediaImage.src,
-      route: '/projects/marvelnstagram'
+      route: 'https://petgram-yosefblandin.vercel.app/'
     },
     {
       projectName: 'Weather App',
@@ -50,13 +50,6 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
       backgroundImage: weatherImage.src,
       route: 'https://weatherapp-yosefblandin.vercel.app/'
     },
-    {
-      projectName: "Blandin's Users Manager",
-      projectCategory: 'Management',
-      backgroundColor: '#fff',
-      backgroundImage: managementImage.src,
-      route: '/projects/blandinsUsersManager'
-    }
   ]
   const homeAboutInfo = `I do like to push
 	myself out of the confort zone, I've had some problems to solve and in
