@@ -18,8 +18,9 @@ export const ProjectElement: FC<{
   style
 }) => {
   return (
-    <Link href={route} passHref>
-      <article
+    <Link href={route} passHref >
+      <a target='_blank' referrerPolicy='no-referrer'>
+			<article
         style={{
           ...style,
           backgroundColor: backgroundColor
@@ -37,6 +38,7 @@ export const ProjectElement: FC<{
           <p>Category: {projectCategory}</p>
         </div>
       </article>
+			</a>
     </Link>
   )
 }

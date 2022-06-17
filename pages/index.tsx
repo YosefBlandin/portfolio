@@ -48,7 +48,7 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
       projectCategory: 'React App',
       backgroundColor: '#fff',
       backgroundImage: weatherImage.src,
-      route: '/projects/weatherApp'
+      route: 'https://weatherapp-yosefblandin.vercel.app/'
     },
     {
       projectName: "Blandin's Users Manager",
