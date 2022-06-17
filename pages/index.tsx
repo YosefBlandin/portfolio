@@ -27,10 +27,7 @@ import { useState } from 'react'
 import axios from 'axios'
 
 const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
-  const [email, setEmail] = useState<string>('')
-  const [errorMessage, setErrorMessage] = useState<string>('')
-  const [response, setResponse] = useState<string>('')
-  const [loading, setLoading] = useState(false)
+  
   const topFourProjects = [
     {
       projectName: "Yosef's Store",
@@ -65,26 +62,7 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
 	myself out of the confort zone, I've had some problems to solve and in
 	those moments, I feel like I'm learning and improving my professional
 	abilities. I enjoy to work with a team and to be helpful as much as posible, we are more productive together.`
-  const handleClick = async () => {
-    setLoading(true)
-    try {
-      const fetchData = await axios.post('/api/sendMail', {
-        email: email
-      })
-      console.log('FETCH', fetchData)
-      setErrorMessage('')
-      setResponse('Subscribed successfully')
-      setLoading(false)
-    } catch (e: any) {
-      setResponse('')
-      setLoading(false)
-      const errorParsed = JSON.parse(e.response.data.error.response.text)
-      if (errorParsed.title === 'Member Exists') {
-        setErrorMessage('Please try again with other email')
-      }
-      console.error()
-    }
-  }
+  
   return (
     <div>
       <Head>
@@ -113,72 +91,6 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
             {topFourProjects.map((element, index) => (
               <ProjectElement key={index} {...element} />
             ))}
-          </div>
-        </section>
-        <section className={styles.contactSectionContainer}>
-          <div className={styles.contactSectionTextContainer}>
-            <h3 className={styles.contactSectionTextTitle}>
-              Don't miss the opportunity of having a conversation with me
-            </h3>
-            <p className={styles.contactSectionTextDescription}>
-              Leave your email and I will send you more information about my
-              professional experience
-            </p>
-          </div>
-          <div className={styles.contactSectionFormContainer}>
-            <label>
-              <InputGroup>
-                <InputLeftElement
-                  pointerEvents={'none'}
-                  display={'flex'}
-                  alignItems={'center'}
-                  paddingTop={'3px'}
-                  height={'100%'}
-                >
-                  <IoMailOutline fontSize={'1.6rem'} />
-                </InputLeftElement>
-                <Input
-                  size={{
-                    base: 'md'
-                  }}
-                  type={'email'}
-                  onChange={e => setEmail(e.target.value)}
-                  placeholder='example@domain.com'
-                />
-              </InputGroup>
-            </label>
-            {errorMessage.length > 0 ? (
-              <Alert
-                status='error'
-                marginTop={'10px'}
-                maxWidth={'372px'}
-                width={'100%'}
-              >
-                <AlertIcon />
-                <AlertTitle fontSize={'0.9rem'}>{errorMessage}</AlertTitle>
-              </Alert>
-            ) : response.length > 0 ? (
-              <Alert
-                status='success'
-                marginTop={'10px'}
-                maxWidth={'372px'}
-                width={'100%'}
-              >
-                <AlertIcon />
-                <AlertTitle fontSize={'0.9rem'}>{response}</AlertTitle>
-              </Alert>
-            ) : (
-              false
-            )}
-            <Button
-              isLoading={loading}
-              onClick={handleClick}
-              variant={'secondary'}
-              maxWidth={{ base: '372px' }}
-              marginTop={'10px'}
-            >
-              Subscribe
-            </Button>
           </div>
         </section>
       </Layout>
