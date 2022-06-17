@@ -21,18 +21,12 @@ export const resolvers = {
             id,
             projectName,
             image,
-            introduction,
             url,
-            description,
-            techStack
           }: iProject) => ({
             id,
             projectName,
             image,
-            introduction,
             url,
-            description,
-            techStack
           })
         )
       } catch (error) {
@@ -47,10 +41,7 @@ export const resolvers = {
           id: project?.[0]?._id,
           projectName: project?.[0]?.projectName,
           image: project?.[0]?.image,
-          introduction: project?.[0]?.introduction,
           url: project?.[0]?.url,
-          description: project?.[0]?.description,
-          techStack: project?.[0]?.techStack
         }
       } catch (error) {
         throw error

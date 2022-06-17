@@ -51,10 +51,6 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
       route: 'https://weatherapp-yosefblandin.vercel.app/'
     },
   ]
-  const homeAboutInfo = `I do like to push
-	myself out of the confort zone, I've had some problems to solve and in
-	those moments, I feel like I'm learning and improving my professional
-	abilities. I enjoy to work with a team and to be helpful as much as posible, we are more productive together.`
   
   return (
     <div>

@@ -5,10 +5,7 @@ export const typeDefs = gql`
     id: ID
     projectName: String
     image: String
-    introduction: String
-    description: String
     url: String
-    techStack: [String!]
   }
 
   type Query {
@@ -19,10 +16,7 @@ export const typeDefs = gql`
   input ProjectInput {
     projectName: String
     image: String
-    introduction: String
-    description: String
     url: String
-    techStack: [String!]
   }
 
   type Mutation {
