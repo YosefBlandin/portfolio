@@ -5,10 +5,7 @@ interface iProject {
   id: string
   projectName: string
   image: string
-  introduction: string
   url: string
-  description: string
-  techStack: string[]
 }
 
 export const resolvers = {

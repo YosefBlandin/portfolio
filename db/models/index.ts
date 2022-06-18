@@ -9,24 +9,12 @@ const ProjectsSchema = new Schema({
     type: String,
     required: true,
   },
-  introduction: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
   image: {
     type: String,
     required: true,
   },
   url: {
     type: String,
-    required: true,
-  },
-  techStack: {
-    type: [String],
     required: true,
   },
 });

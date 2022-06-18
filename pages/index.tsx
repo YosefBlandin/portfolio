@@ -103,10 +103,7 @@ export async function getServerSideProps () {
           id
           projectName
           image
-          introduction
-          description
           url
-          techStack
         }
       }
     `
