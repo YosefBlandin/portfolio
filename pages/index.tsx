@@ -15,9 +15,9 @@ const Layout = dynamic(() => import('../Layout'), {
 })
 import styles from '../styles/Home.module.css'
 import { ProjectElement } from '../components/ProjectElement'
-import ecommerceImage from '../public/ecommerce.svg'
-import socialMediaImage from '../public/socialMedia.svg'
-import weatherImage from '../public/weather.svg'
+import macheteStoreImg from '../public/macheteStore.png'
+import petgramImg from '../public/petgram.png'
+import weatherImage from '../public/weatherApp.png'
 import managementImage from '../public/management.svg'
 import { useRouter } from 'next/router'
 import { TitleSectionSplitter } from '../components/TitleSectionSplitter'
@@ -33,14 +33,14 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
       projectName: "Machete Store",
       projectCategory: 'E-commerce',
       backgroundColor: '#fff',
-      backgroundImage: ecommerceImage.src,
+      backgroundImage: macheteStoreImg.src,
       route: 'https://machete-store-yosefblandin.vercel.app/'
     },
     {
       projectName: 'Petgram',
       projectCategory: 'Social Media Platform',
       backgroundColor: '#fff',
-      backgroundImage: socialMediaImage.src,
+      backgroundImage: petgramImg.src,
       route: 'https://petgram-yosefblandin.vercel.app/'
     },
     {

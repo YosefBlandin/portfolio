@@ -33,10 +33,10 @@ export const ProjectElement: FC<{
           }}
           className={styles.projectElementBackground}
         ></div>
-        <div className={styles.projectElementText}>
+        {/* <div className={styles.projectElementText}>
           <h5>{projectName}</h5>
           <p>Category: {projectCategory}</p>
-        </div>
+        </div> */}
       </article>
 			</a>
     </Link>
