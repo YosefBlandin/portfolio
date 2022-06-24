@@ -18,6 +18,7 @@ import { ProjectElement } from '../components/ProjectElement'
 import macheteStoreImg from '../public/macheteStore.png'
 import petgramImg from '../public/petgram.png'
 import weatherImage from '../public/weatherApp.png'
+import spacexImage from '../public/spacexPracticeImg.png'
 import managementImage from '../public/management.svg'
 import { useRouter } from 'next/router'
 import { TitleSectionSplitter } from '../components/TitleSectionSplitter'
@@ -32,24 +33,27 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
     {
       projectName: "Machete Store",
       projectCategory: 'E-commerce',
-      backgroundColor: '#fff',
       backgroundImage: macheteStoreImg.src,
       route: 'https://machete-store-yosefblandin.vercel.app/'
     },
     {
       projectName: 'Petgram',
       projectCategory: 'Social Media Platform',
-      backgroundColor: '#fff',
       backgroundImage: petgramImg.src,
       route: 'https://petgram-yosefblandin.vercel.app/'
     },
     {
       projectName: 'Weather App',
-      projectCategory: 'React App',
-      backgroundColor: '#fff',
+      projectCategory: 'React SPA',
       backgroundImage: weatherImage.src,
       route: 'https://weatherapp-yosefblandin.vercel.app/'
     },
+		{
+			projectName: 'Spacex API practice',
+			projectCategory: 'Next web',
+			backgroundImage: spacexImage.src,
+			route: 'https://spacexapipractice.vercel.app/'
+		}
   ]
   
   return (

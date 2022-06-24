@@ -12,7 +12,7 @@ export const hamburguerElements = [
     name: "Resume",
     external: true,
     route:
-      "https://drive.google.com/file/d/1SzbQzHpSYprcpiVZI4yxQwDQi6GMi5uw/view?usp=sharing",
+      "https://drive.google.com/file/d/1y-F6HNGyYcCi6F9E1d7PseJUQ2sizXzV/view?usp=sharing",
     icon: <SiAboutdotme />,
   },
 ];

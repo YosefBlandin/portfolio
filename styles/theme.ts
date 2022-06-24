@@ -18,7 +18,6 @@ export const theme = extendTheme({
           _hover: { boxShadow: '0 0 0 0', _disabled: {
 						background: '#0070f3'
 					} },
-          boxShadow: '0 4px 14px 0 rgb(0 118 255 / 39%)'
         },
         secondary: {
           backgroundColor: '#000',
@@ -27,7 +26,6 @@ export const theme = extendTheme({
 							background: '#000'
 						}
 					},
-          boxShadow: '0 4px 14px 0 rgb(0 0 0 / 39%)'
         }
       }
     }

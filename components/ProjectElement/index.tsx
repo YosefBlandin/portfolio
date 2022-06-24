@@ -6,23 +6,19 @@ import styles from './styles.module.css'
 
 export const ProjectElement: FC<{
   projectName: string
-  projectCategory: string
-  backgroundColor: string
   backgroundImage: string
   route: string
   style?: CSSProperties
 }> = ({
   projectName,
-  projectCategory,
-  backgroundColor,
   backgroundImage,
   route,
   style
 }) => {
   return (
     <Link href={route} passHref >
-      <a target='_blank' referrerPolicy='no-referrer'>
-			<Box padding={'0'} textAlign={'center'} _hover={{ transform: 'scale(1.008)' }} transition='0.3s ease'>
+      <a target='_blank' referrerPolicy='no-referrer' style={{ height: 'fit-content' }}>
+			<Box className={styles.projectContainer} position={'relative'} borderRadius='5px' width={'fit-content'} height={'200px'} boxShadow={'0 0 10px 0 rgb(150, 150, 150)'} padding={'0'} textAlign={'center'} _hover={{ transform: 'scale(1.003)' }} transition='0.3s ease' >
 					<Image
 						style={{ borderRadius: '5px' }}
 						alt={projectName}
@@ -31,8 +27,10 @@ export const ProjectElement: FC<{
 						height={200}
 						src={backgroundImage}
 					/>
-          <Heading marginTop={'10px'} fontWeight={'bold'} fontSize={{ base: '1.1rem' }}>{projectName}</Heading>
-          <Text fontSize={{ base: '1rem' }}>{projectCategory}</Text>
+          <Box className={styles.projectTextContainer} top={'140px'} bottom={'0'} left={'0'} right={'0'} position={'absolute'} borderRadius={'0 0 5px 5px'} transition={'0.4s ease'} display={'flex'} flexDirection={'column'} justifyContent={'center'} opacity={'0'} background={'#000'} height={'60px'} width={'100%'}>
+						<Heading color={'#fff'} marginTop={'1 0px'}fontWeight={'bold'} fontSize={{ base: '1.1rem' }}>{projectName}</Heading>
+						
+					</Box>
         </Box>
 			</a>
     </Link>

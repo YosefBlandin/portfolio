@@ -5,7 +5,6 @@
   padding: 1.8rem 1rem;
   margin: 0 auto;
   background-color: #fff;
-  /* transition: 0.3s ease; */
 }
 .headerHidden {
   opacity: 0;
@@ -56,7 +55,6 @@
 }
 .headerFixedLogo span {
   color: #0070f3;
-  text-shadow: 0 4px 14px rgb(0 118 255 / 39%);
 }
 
 .headerLogo {
@@ -67,7 +65,6 @@
 }
 .headerLogo span {
   color: #0070f3;
-  text-shadow: 0 4px 14px rgb(0 118 255 / 39%);
 }
 .headerFixedHamburguer {
   position: absolute;
@@ -120,12 +117,6 @@
 }
 .footer .footerContact a span {
   margin-left: 0.2rem;
-}
-
-@media screen and (min-width: 768px) {
-  /* .header {
-    max-width: 650px;
-  } */
 }
 
 @media screen and (min-width: 1024px) {
