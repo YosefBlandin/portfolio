@@ -13,7 +13,7 @@ export default function Layout ({
   showNav
 }: {
   children: ReactChild | ReactChild[],
-  showNav: boolean
+  showNav?: boolean
 }) {
   const [isIntersecting, setIsIntersecting] = useState(false)
   const [showSidebar, setShowSidebar] = useState(false)
