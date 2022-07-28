@@ -1,4 +1,4 @@
-import { SiHomeassistant, SiOnnx, SiAboutdotme } from "react-icons/si";
+import { SiHomeassistant, SiInstapaper, SiAboutdotme } from "react-icons/si";
 
 export const hamburguerElements = [
   {
@@ -7,6 +7,13 @@ export const hamburguerElements = [
     route: "/",
     download: false,
     icon: <SiHomeassistant />,
+  },
+  {
+    name: "Blog",
+    external: true,
+    route:
+      "https://medium.com/turpialdev/how-the-event-loop-works-in-javascript-349c0936ab03?source=collection_home---4------3-----------------------",
+    icon: <SiInstapaper />,
   },
   {
     name: "Resume",

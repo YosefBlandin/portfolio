@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^2.2.1",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@fontsource/raleway": "^4.5.9",
     "apollo-server-core": "^3.7.0",
     "apollo-server-micro": "^3.7.0",
     "axios": "^0.27.2",

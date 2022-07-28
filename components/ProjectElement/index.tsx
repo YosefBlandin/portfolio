@@ -18,7 +18,7 @@ export const ProjectElement: FC<{
   return (
     <Link href={route} passHref >
       <a target='_blank' referrerPolicy='no-referrer' style={{ height: 'fit-content' }}>
-			<Box className={styles.projectContainer} position={'relative'} borderRadius='5px' width={'fit-content'} height={'200px'} boxShadow={'0 0 10px 0 rgb(150, 150, 150)'} padding={'0'} textAlign={'center'} _hover={{ transform: 'scale(1.003)' }} transition='0.3s ease' >
+			<Box className={styles.projectContainer} position={'relative'} borderRadius='5px' width={'fit-content'} height={'200px'} padding={'0'} textAlign={'center'} _hover={{ transform: 'scale(1.003)' }} transition='0.3s ease' >
 					<Image
 						style={{ borderRadius: '5px' }}
 						alt={projectName}

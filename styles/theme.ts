@@ -1,6 +1,10 @@
 import { extendTheme } from '@chakra-ui/react'
 
 export const theme = extendTheme({
+  fonts: {
+    heading: `'Raleway', sans-serif`,
+    body: `'Raleway', sans-serif`,
+  },
   components: {
     Button: {
       baseStyle: {
@@ -14,9 +18,10 @@ export const theme = extendTheme({
       },
       variants: {
         primary: {
-          backgroundColor: '#0070f3',
+          backgroundColor: '#000',
+          boxShadow: '0 2px 10px 0 rgb(100, 100, 100)',
           _hover: { boxShadow: '0 0 0 0', _disabled: {
-						background: '#0070f3'
+						background: '#000'
 					} },
         },
         secondary: {

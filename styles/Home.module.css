@@ -37,7 +37,7 @@
 }
 
 .hero h1 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   text-align: center;
   font-weight: 900;
   animation: 1s textGradient;
@@ -234,7 +234,7 @@
     max-width: 1200px;
   }
   .heroTextContainer h1 {
-    font-size: 3.9rem;
+    font-size: 3.5rem;
     font-weight: 900;
   }
   .heroTextContainer h2 {

@@ -5,15 +5,16 @@
 @media screen and (min-width: 1024px) {
   .headerElementsList {
     display: flex;
-
+    justify-content: center;
     list-style-type: none;
   }
   .headerElement {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 100px;
+    margin: 0 40px;
     font-weight: 500;
+    
   }
   .headerElement svg {
     margin-right: 5px;

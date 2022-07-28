@@ -9,13 +9,17 @@ import { HeaderElements } from './HeaderElements'
 import styles from './styles.module.css'
 
 export default function Layout ({
-  children
+  children,
+  showNav
 }: {
-  children: ReactChild | ReactChild[]
+  children: ReactChild | ReactChild[],
+  showNav: boolean
 }) {
   const [isIntersecting, setIsIntersecting] = useState(false)
   const [showSidebar, setShowSidebar] = useState(false)
+  const [fadeUp, setFadeUp] = useState('')
   const [headerClassName, setHeaderClassName] = useState(styles.header)
+  const [bgColor, setBgColor] = useState(styles.bgWhite)
   const [headerFixedClassName, setHeaderFixedClassName] = useState(
     `${styles.headerFixed} ${styles.headerFixedHidden}`
   )
@@ -28,6 +32,8 @@ export default function Layout ({
     threshold: 1.0
   }
 
+  
+
   const headerObserverEntries = useIntersectionObserver({
     options,
     target: headerContainerRef
@@ -38,12 +44,16 @@ export default function Layout ({
         setIsIntersecting(false)
         setHeaderClassName(`${styles.header} ${styles.headerHidden}`)
         setHeaderFixedClassName(`${styles.headerFixed}`)
+        setBgColor(`${styles.bgBlack}`)
+        setFadeUp(`${styles.fadeUp}`)
       } else {
+        setFadeUp('')
         setIsIntersecting(true)
         setHeaderClassName(styles.header)
         setHeaderFixedClassName(
           `${styles.headerFixed} ${styles.headerFixedHidden}`
         )
+        setBgColor(`${styles.bgWhite}`)
       }
     },
     [headerObserverEntries]
@@ -51,9 +61,12 @@ export default function Layout ({
   return (
     <>
       <header className={headerClassName} ref={headerContainerRef}>
+        <div className={styles.logoContainer}>
         <p className={styles.headerLogo} onClick={() => router.push('/')}>
           Yosef <span>Blandin</span>
         </p>
+        </div>
+        <nav className={`${styles.headerNav} ${!showNav && window.screen.width >= 768 ? styles.fadeDown : styles.fadeUp}`}>
         <SiCoderwall
           className={
             showSidebar
@@ -67,12 +80,16 @@ export default function Layout ({
           showSidebar={showSidebar}
         />
         <HeaderElements data={hamburguerElements} textColor='#000' />
+        </nav>
       </header>
       <header className={headerFixedClassName}>
+        <div className={styles.logoContainer}>
         <p className={styles.headerFixedLogo} onClick={() => router.push('/')}>
           Yosef
           <span> Blandin</span>
         </p>
+        </div>
+        <nav className={`${styles.headerNav} ${!showNav && window.screen.width >= 768 ? styles.fadeDown : styles.fadeUp}`}>
         <SiCoderwall
           className={
             showSidebar
@@ -86,7 +103,8 @@ export default function Layout ({
           showSidebar={showSidebar}
         />
 
-        <HeaderElements data={hamburguerElements} textColor='#fff' />
+        <HeaderElements data={hamburguerElements} textColor='#000' />
+        </nav>
       </header>
       {children}
       <footer className={styles.footer}>

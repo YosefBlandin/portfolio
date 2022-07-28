@@ -28,7 +28,7 @@ import { useState } from 'react'
 import axios from 'axios'
 
 const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
-  
+  const [showNav, setShowNav] = useState(true)
   const topFourProjects = [
     {
       projectName: "Machete Store",
@@ -57,11 +57,22 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
   ]
   
   return (
-    <div>
+    <div onWheel={(e) => {
+      if(e.deltaY >= 0){
+        // Scrolling Down with mouse
+        console.log('Scroll Down');
+        setShowNav(false)
+      } else {
+        // Scrolling Up with mouse
+        console.log('Scroll Up');
+        setShowNav(true)
+      }
+    }}>
       <Head>
         <title>Yosef Blandin</title>
+        
       </Head>
-      <Layout>
+      <Layout showNav={showNav}>
         <main className={styles.container}>
           <section className={styles.hero}>
             <div className={styles.heroTextContainer}>
@@ -79,7 +90,7 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
           </section>
         </main>
         <section id='projects' className={styles.secondSectionContainer}>
-          <TitleSectionSplitter title={'Study cases'} />
+          <TitleSectionSplitter title={'Projects'} />
           <div className={styles.topProjectsContainer}>
             {topFourProjects.map((element, index) => (
               <ProjectElement key={index} {...element} />
