@@ -5,6 +5,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta charSet="UTF-8" />
           <meta name='description' content="Develop your with page with a professional Frontend Developer with 1.8 years of experience building websites using React JS" />
           <meta name='keywords' content="HTML, CSS, JavaScript, React, Angular, Frontend, Developer, Engineer, Web, Website, Yosef, Blandin, Rios, YosefBlandin, YosefBlandinRios, Software" />
           <meta name="author" content="Yosef Blandin" />
