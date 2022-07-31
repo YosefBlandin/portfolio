@@ -71,7 +71,7 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
       <Head>
         <title>Yosef Blandin</title>
         <meta charSet="UTF-8" />
-          <meta name='description' content="Develop your with page with a professional Frontend Developer with 1.8 years of experience building websites using React JS" />
+          <meta name='description' content="Develop your web application with a professional Frontend Developer with over 2 years of experience building websites using React JS" />
           <meta name='keywords' content="HTML, CSS, JavaScript, React, Angular, Frontend, Developer, Engineer, Web, Website, Yosef, Blandin, Rios, YosefBlandin, YosefBlandinRios, Software" />
           <meta name="author" content="Yosef Blandin" />
       </Head>
