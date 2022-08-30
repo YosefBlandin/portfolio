@@ -28,12 +28,12 @@
 }
 
 @keyframes textGradient {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .hero h1 {
@@ -76,9 +76,11 @@
 }
 .topProjectsContainer {
   display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 320px));
-	grid-auto-rows: 300px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 400px));
+  grid-auto-rows: 300px;
+  padding: 0 15px;
   gap: 10px;
+  justify-items: center;
   justify-content: center;
 }
 
@@ -118,7 +120,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-
   .heroTextContainer {
     padding-top: 30px;
     max-width: 900px;

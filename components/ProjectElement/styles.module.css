@@ -1,7 +1,22 @@
-.projectTextContainer {
-	opacity: 0;
+.projectContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  color: #000;
 }
 
-.projectContainer:hover .projectTextContainer {
-	opacity: .8;
+.projectTextContainer {
+  margin-top: 15px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 1024px) {
+  .projectImageContainer {
+    max-width: 300px;
+    height: fit-content;
+  }
+  .projectImageContainer img {
+    border-radius: 5px;
+  }
 }
