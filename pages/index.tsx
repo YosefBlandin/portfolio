@@ -25,9 +25,8 @@ import { TitleSectionSplitter } from "../components/TitleSectionSplitter";
 import { ButtonComponent } from "../components/ButtonComponent";
 import { Button, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { useState } from "react";
-import axios from "axios";
 
-const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
+const Home: NextPage = () => {
   const [showNav, setShowNav] = useState(true);
   const topFourProjects = [
     {
@@ -37,13 +36,13 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
       backgroundImage: macheteStoreImg.src,
       route: "https://machete-store-yosefblandin.vercel.app/",
     },
-    {
-      projectName: "Weather App",
-      projectStack: "Angular",
-      projectDescription: "Angular single page application",
-      backgroundImage: weatherImage.src,
-      route: "https://petgram-yosefblandin.vercel.app/",
-    },
+    // {
+    //   projectName: "Weather App",
+    //   projectStack: "Angular",
+    //   projectDescription: "Angular single page application",
+    //   backgroundImage: weatherImage.src,
+    //   route: "https://petgram-yosefblandin.vercel.app/",
+    // },
     {
       projectName: "Weather App",
       projectStack: "React",
@@ -109,33 +108,5 @@ const Home: NextPage<{ projects: string[] }> = ({ projects }) => {
     </div>
   );
 };
-
-export async function getServerSideProps() {
-  const client = new ApolloClient({
-    uri:
-      process.env?.isProduction === "true"
-        ? "http://localhost:3000/api/graphql"
-        : "https://web-yosefblandin.vercel.app/api/graphql",
-    cache: new InMemoryCache(),
-  });
-
-  const { data } = await client.query({
-    query: gql`
-      query getProjects {
-        getProjects {
-          id
-          projectName
-          image
-          url
-        }
-      }
-    `,
-  });
-  return {
-    props: {
-      projects: data?.getProjects,
-    },
-  };
-}
 
 export default Home;
