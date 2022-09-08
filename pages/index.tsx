@@ -56,27 +56,20 @@ const Home: NextPage = () => {
     <div
       onWheel={(e) => {
         if (e.deltaY >= 0) {
-          // Scrolling Down with mouse
-          console.log("Scroll Down");
           setShowNav(false);
         } else {
-          // Scrolling Up with mouse
-          console.log("Scroll Up");
           setShowNav(true);
         }
       }}
     >
       <Head>
-        <title>Yosef Blandin</title>
+        <title>Building World Class Front End systems - Yosef Blandin</title>
         <meta charSet="UTF-8" />
         <meta
           name="description"
-          content="Develop your web application with a professional Frontend Developer with over 2 years of experience building websites using React JS"
+          content="Bring to life your designs with a professional Front End Developer with over 2 years of experience working with JavaScript using React, Next and Angular"
         />
-        <meta
-          name="keywords"
-          content="HTML, CSS, JavaScript, React, Angular, Frontend, Developer, Engineer, Web, Website, Yosef, Blandin, Rios, YosefBlandin, YosefBlandinRios, Software"
-        />
+        <meta name="robots" content="index, follow" />
         <meta name="author" content="Yosef Blandin" />
       </Head>
       <Layout showNav={showNav}>
