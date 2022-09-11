@@ -4,7 +4,6 @@
   padding: 2rem 1rem;
   padding-top: 1rem;
   color: black;
-  min-height: 75vh;
 }
 .secondSectionContainer {
   padding: 50px 0;
@@ -108,6 +107,20 @@
   font-size: 1.2rem;
   margin-bottom: 40px;
 }
+.infoSectionContainer {
+	display: flex;
+	justify-content: center;
+	min-height: 40vh;
+	padding: 0 10px;
+	margin-bottom: 240px;
+}
+
+.cardsInfoContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 60px;
+}
 
 @media screen and (min-width: 768px) {
   .container {
@@ -127,11 +140,10 @@
     padding-top: 0;
     max-width: 900px;
     margin: 0 auto;
-    margin-bottom: 140px;
     row-gap: 40px;
   }
   .heroTextContainer h1 {
-    font-size: 2.8rem;
+    font-size: 2rem;
     font-weight: 900;
   }
   .heroTextContainer h2 {
@@ -177,7 +189,7 @@
     max-width: 1200px;
   }
   .heroTextContainer h1 {
-    font-size: 2.8rem;
+    font-size: 2rem;
     font-weight: 900;
   }
   .heroTextContainer h2 {
@@ -216,7 +228,7 @@
     margin-bottom: 80px;
   }
   .heroTextContainer h1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .heroTextContainer h2 {
     font-size: 1.5rem;
@@ -240,11 +252,11 @@
     max-width: 1200px;
   }
   .heroTextContainer h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 900;
   }
   .heroTextContainer h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .heroImageContainer {
     grid-column: 2;

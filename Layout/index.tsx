@@ -109,8 +109,6 @@ export default function Layout ({
       {children}
       <footer className={styles.footer}>
         <div>
-          <p>Best regards</p>
-          <p>Yosef Blandin All Rights Reserved</p>
           <div className={styles.footerContact}>
             <a
               href='https://www.linkedin.com/in/yosef-blandin-a587241b0/'

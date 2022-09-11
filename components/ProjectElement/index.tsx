@@ -30,9 +30,7 @@ export const ProjectElement: FC<{
         <Box
           className={styles.projectContainer}
           position={"relative"}
-          borderRadius="5px"
           width={"fit-content"}
-          padding={"0"}
           textAlign={"center"}
           transition="0.3s ease"
         >
