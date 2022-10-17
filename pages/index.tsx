@@ -17,16 +17,12 @@ const Layout = dynamic(() => import("../Layout"), {
 import styles from "../styles/Home.module.css";
 import { ProjectElement } from "../components/ProjectElement";
 import macheteStoreImg from "../public/macheteStore.png";
-import petgramImg from "../public/petgram.png";
 import weatherImage from "../public/weatherApp.png";
-import spacexImage from "../public/spacexPracticeImg.png";
-import managementImage from "../public/management.svg";
-import yosefAvatar from "../public/yosefAvatar.png"
 import analysisImage from "../public/analysis.svg";
 import dealImage from "../public/deal.svg";
 import typingImage from "../public/typing.svg";
+import randmImage from "../public/randm.png";
 import { TitleSectionSplitter } from "../components/TitleSectionSplitter";
-import { ButtonComponent } from "../components/ButtonComponent";
 import { Button, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { useState } from "react";
 import { CardInfo } from "../components/CardInfo";
@@ -35,19 +31,20 @@ const Home: NextPage = () => {
   const [showNav, setShowNav] = useState(true);
   const topFourProjects = [
     {
+      projectName: "R&M By Yosef Blandin",
+      projectDescription:
+        "Project in which you can see all Rick and Morty's characters and add your favorite to a list",
+      projectStack: "Next JS, React JS, Redux",
+      backgroundImage: randmImage.src,
+      route: "https://rickandmorty-gilt-nine.vercel.app/",
+    },
+    {
       projectName: "Machete Store",
       projectDescription: "Small project made for a local shop",
       projectStack: "React JS, Redux",
       backgroundImage: macheteStoreImg.src,
       route: "https://machete-store-yosefblandin.vercel.app/",
     },
-    // {
-    //   projectName: "Weather App",
-    //   projectStack: "Angular",
-    //   projectDescription: "Angular single page application",
-    //   backgroundImage: weatherImage.src,
-    //   route: "https://petgram-yosefblandin.vercel.app/",
-    // },
     {
       projectName: "Weather App",
       projectStack: "React",
@@ -57,23 +54,26 @@ const Home: NextPage = () => {
     },
   ];
 
-	const infoSectionInfo = [
-		{
-			title: 'Evaluation of your requirements',
-			description: 'It is crucial to have a clear understanding of your requirements in order to provide a solution molded for you',
-			img: analysisImage
-		},
-		{
-			title: 'Strong communication',
-			description: 'I was a client years ago and I like to have an assertive communication in order to know the progress and what steps we are going to take afterwards',
-			img: dealImage
-		},
-		{
-			title: 'Specialized',
-			description: 'I have worked with many web technologies such as Typescript, React, Next, Angular, Bootstrap, Sass, Formik, HTML, CSS',
-			img: typingImage
-		}
-	]
+  const infoSectionInfo = [
+    {
+      title: "Evaluation of your requirements",
+      description:
+        "It is crucial to have a clear understanding of your requirements in order to provide a solution molded for you",
+      img: analysisImage,
+    },
+    {
+      title: "Strong communication",
+      description:
+        "I was a client years ago and I like to have an assertive communication in order to know the progress and what steps we are going to take afterwards",
+      img: dealImage,
+    },
+    {
+      title: "Specialized",
+      description:
+        "I have worked with many web technologies such as Typescript, React, Next, Angular, Bootstrap, Sass, Formik, HTML, CSS",
+      img: typingImage,
+    },
+  ];
 
   return (
     <div
@@ -98,9 +98,7 @@ const Home: NextPage = () => {
       <Layout showNav={showNav}>
         <main className={styles.container}>
           <section className={styles.hero}>
-						
             <div className={styles.heroTextContainer}>
-						
               <h1>Developing the Frontend of the World</h1>
               <h2>
                 Experience working with top tier technologies such as React JS,
@@ -114,13 +112,18 @@ const Home: NextPage = () => {
             </div>
           </section>
         </main>
-				<section className={styles.infoSectionContainer}>
-					<div className={styles.cardsInfoContainer}>
-					{infoSectionInfo.map((element) => (
-						<CardInfo key={element.title} title={element.title} description={element.description} src={element.img.src} />
-					))}
-					</div>
-				</section>
+        <section className={styles.infoSectionContainer}>
+          <div className={styles.cardsInfoContainer}>
+            {infoSectionInfo.map((element) => (
+              <CardInfo
+                key={element.title}
+                title={element.title}
+                description={element.description}
+                src={element.img.src}
+              />
+            ))}
+          </div>
+        </section>
         <section id="projects" className={styles.secondSectionContainer}>
           <TitleSectionSplitter title={"Projects"} />
           <div className={styles.topProjectsContainer}>
