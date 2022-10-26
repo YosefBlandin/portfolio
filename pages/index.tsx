@@ -20,10 +20,10 @@ import macheteStoreImg from "../public/macheteStore.png";
 import weatherImage from "../public/weatherApp.png";
 import analysisImage from "../public/analysis.svg";
 import dealImage from "../public/deal.svg";
-import typingImage from "../public/typing.svg";
+import fitnessImage from "../public/Fitness tracker-bro.svg";
 import randmImage from "../public/randm.png";
 import { TitleSectionSplitter } from "../components/TitleSectionSplitter";
-import { Button, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import { useState } from "react";
 import { CardInfo } from "../components/CardInfo";
 
@@ -56,22 +56,22 @@ const Home: NextPage = () => {
 
   const infoSectionInfo = [
     {
-      title: "Evaluation of your requirements",
+      title: "Learning enthusiast",
       description:
-        "It is crucial to have a clear understanding of your requirements in order to provide a solution molded for you",
+        "I like to read a lot of books to expand my knowledge, and therefore be able to find better solutions to problems",
       img: analysisImage,
     },
     {
-      title: "Strong communication",
+      title: "Ownership mindset believer",
       description:
-        "I was a client years ago and I like to have an assertive communication in order to know the progress and what steps we are going to take afterwards",
+        "The ownership mindset has been a key to my life in order to overcome challenges, to be relentless recognizing my errors learning from them",
       img: dealImage,
     },
     {
-      title: "Specialized",
+      title: "Fitness devotee",
       description:
-        "I have worked with many web technologies such as Typescript, React, Next, Angular, Bootstrap, Sass, Formik, HTML, CSS",
-      img: typingImage,
+        "I like to maintain a healthy condition in order to have a better performance mentally and physically",
+      img: fitnessImage,
     },
   ];
 
@@ -86,11 +86,11 @@ const Home: NextPage = () => {
       }}
     >
       <Head>
-        <title>Building World Class Front End systems - Yosef Blandin</title>
+        <title>Yosef Blandin</title>
         <meta charSet="UTF-8" />
         <meta
           name="description"
-          content="Bring to life your designs with a professional Front End Developer with over 2 years of experience working with JavaScript using React, Next and Angular"
+          content="Software Developer with over 2 years of experience working with Typescript and Next"
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Yosef Blandin" />
@@ -99,10 +99,16 @@ const Home: NextPage = () => {
         <main className={styles.container}>
           <section className={styles.hero}>
             <div className={styles.heroTextContainer}>
-              <h1>Developing the Frontend of the World</h1>
+              <h1>
+                A Web Application must be an unique experience for your users
+              </h1>
               <h2>
-                Experience working with top tier technologies such as React JS,
-                Next JS, Typescript and more
+                <strong>Software Developer</strong> specialized in{" "}
+                <strong>TypeScript, Next</strong> and <strong>GraphQL</strong>.
+                I like to make scalable frontend applications, applying
+                animations, good practices and listening to{" "}
+                <strong>users</strong> in order to build{" "}
+                <strong>top-notch web experiences</strong>
               </h2>
               <a href="#projects">
                 <Button size={"lg"} variant={"primary"} height={{ lg: "60px" }}>
