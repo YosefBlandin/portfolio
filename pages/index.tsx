@@ -22,6 +22,7 @@ import analysisImage from "../public/analysis.svg";
 import dealImage from "../public/deal.svg";
 import fitnessImage from "../public/Fitness tracker-bro.svg";
 import randmImage from "../public/randm.png";
+import randmgraphqlImage from "../public/randmgraphql.png";
 import { TitleSectionSplitter } from "../components/TitleSectionSplitter";
 import { Button } from "@chakra-ui/react";
 import { useState } from "react";
@@ -31,17 +32,25 @@ const Home: NextPage = () => {
   const [showNav, setShowNav] = useState(true);
   const topFourProjects = [
     {
+      projectName: "R&M with GraphQL By Yosef Blandin",
+      projectDescription:
+        "Project in which you can see all Rick and Morty's characters and add your favorite to a list",
+      projectStack: "Next, React, Redux, GraphQL",
+      backgroundImage: randmgraphqlImage.src,
+      route: "https://rickandmorty-gilt-nine.vercel.app/",
+    },
+    {
       projectName: "R&M By Yosef Blandin",
       projectDescription:
         "Project in which you can see all Rick and Morty's characters and add your favorite to a list",
-      projectStack: "Next JS, React JS, Redux",
+      projectStack: "Next, React, Redux",
       backgroundImage: randmImage.src,
       route: "https://rickandmorty-gilt-nine.vercel.app/",
     },
     {
       projectName: "Machete Store",
       projectDescription: "Small project made for a local shop",
-      projectStack: "React JS, Redux",
+      projectStack: "React, Context API",
       backgroundImage: macheteStoreImg.src,
       route: "https://machete-store-yosefblandin.vercel.app/",
     },

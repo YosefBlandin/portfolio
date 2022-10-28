@@ -108,18 +108,18 @@
   margin-bottom: 40px;
 }
 .infoSectionContainer {
-	display: flex;
-	justify-content: center;
-	min-height: 40vh;
-	padding: 0 10px;
-	margin-bottom: 240px;
+  display: flex;
+  justify-content: center;
+  min-height: 40vh;
+  padding: 0 10px;
+  margin-bottom: 240px;
 }
 
 .cardsInfoContainer {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
 }
 
 @media screen and (min-width: 768px) {
@@ -152,6 +152,15 @@
   .secondSectionContainer {
     padding: 50px 10px;
     padding-bottom: 100px;
+  }
+  .cardsInfoContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .topProjectsContainer {
+    gap: 10px;
+    row-gap: 60px;
   }
   .contactSectionContainer {
     flex-direction: row;
