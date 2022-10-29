@@ -37,7 +37,7 @@ const Home: NextPage = () => {
         "Project in which you can see all Rick and Morty's characters and add your favorite to a list",
       projectStack: "Next, React, Redux, GraphQL",
       backgroundImage: randmgraphqlImage.src,
-      route: "https://rickandmorty-gilt-nine.vercel.app/",
+      route: "https://rickandmortygraphql-eight.vercel.app/",
     },
     {
       projectName: "R&M By Yosef Blandin",
