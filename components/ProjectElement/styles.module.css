@@ -1,24 +1,73 @@
-.projectContainer {
-  display: flex;
-  flex-direction: column;
-	align-items: center;
+@keyframes cardFade {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.projectCard {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
   max-width: 320px;
-	min-height: 300px;
-	padding: 0 0 0 0;
-	border-radius: 20px;
+  min-height: 300px;
+  border-radius: 20px;
+  min-height: 330px;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 0 15px 0 rgb(200, 200, 200);
+  animation: forwards cardFade 0.6s linear;
+}
+
+.projectCard__mainSection {
+  padding: 15px;
+  border-radius: 10px 10px 0 0;
+  background: #fff;
+}
+
+.projectCard__mainSection .projectCard__name {
+  font-size: 1rem;
+}
+
+.projectCard__mainSection .projectCard__title {
+  font-weight: 700;
+  max-width: 230px;
+  margin: 5px 0;
+  font-size: 1.1rem;
+}
+
+.projectCard__mainSection .projectCard__stack {
+  font-size: 1rem;
+}
+
+.projectCard__secondarySection {
+  padding: 15px;
+  color: #fff;
+  font-weight: 600;
+  background: #000;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .projectTextContainer {
-	margin-top: 10px;
-	line-height: 1.5rem;
+  margin-top: 10px;
+  line-height: 1.5rem;
   text-align: start;
 }
 
 @media screen and (min-width: 1024px) {
   .projectImageContainer {
     height: fit-content;
-  }
-  .projectImageContainer img {
-		min-height: 170px;
   }
 }

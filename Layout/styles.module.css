@@ -6,11 +6,11 @@
   justify-content: space-between;
   padding: 0;
   margin: 0 auto;
-  background-color: #fff;
+  background: #f5f5f7;
 }
 .headerHidden {
   opacity: 0;
-  background-color: white;
+  background: #f5f5f7;
 }
 .headerFixed {
   z-index: 10;
@@ -23,15 +23,14 @@
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #f5f5f7;
 }
 
 .logoContainer {
   position: relative;
   z-index: 2;
   padding: 20px 15px;
-	background-color: #fff;
-	
+  background: #f5f5f7;
 }
 
 .headerNav {
@@ -42,14 +41,14 @@
   height: 100%;
   transition: 0.5s ease;
   transition-property: transform;
-  background-color: #fff;
+  background: #f5f5f7;
 }
 @keyframes fadeUpK {
   0% {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(90px);  
+    transform: translateY(90px);
   }
 }
 @keyframes fadeDownK {
@@ -62,18 +61,18 @@
 }
 .fadeUp {
   /* opacity: 0; */
-  
-  transform: translateY(0);  
+
+  transform: translateY(0);
 }
 .fadeDown {
   opacity: 0;
-  
+
   transform: translateY(-90px);
 }
 
 .bgWhite {
   color: #000;
-  background-color: #fff;
+  background: #f5f5f7;
 }
 
 .bgBlack {
@@ -139,8 +138,9 @@
 }
 .footer {
   width: 100%;
+  margin-top: 40px;
   border-top: 1px solid #eaeaea;
-  background-color: #fff;
+  background: #f5f5f7;
 }
 .footer > div {
   display: flex;
@@ -148,7 +148,7 @@
   align-items: center;
   max-width: 500px;
   margin: 0 auto;
-  background-color: #fff;
+  background: #f5f5f7;
   margin-top: 3rem;
 }
 .footer div p {
@@ -178,7 +178,6 @@
   .header {
     display: flex;
     flex-direction: column;
-    
   }
   .headerNav {
     padding: 1.8rem 40px;
@@ -200,7 +199,6 @@
     display: flex;
     flex-direction: column;
     background-color: transparent;
-    
   }
   .headerFixed > ul {
     height: initial;
@@ -214,29 +212,25 @@
   .footer div {
     padding-bottom: 1.2rem;
   }
-	.footerContact {
-		padding: 0.7rem 3rem;
-	}
+  .footerContact {
+    padding: 0.7rem 3rem;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-  
   .headerNav {
     padding-right: 45px;
-    
   }
 }
 
 @media screen and (min-width: 1440px) {
   .headerNav {
     padding: 2.1rem 40px;
-    
   }
 }
 
 @media screen and (min-width: 1920px) {
   .headerNav {
     padding: 2rem 120px;
-    
   }
 }

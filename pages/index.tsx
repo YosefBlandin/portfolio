@@ -8,6 +8,7 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
+  Box,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
@@ -16,49 +17,47 @@ const Layout = dynamic(() => import("../Layout"), {
 });
 import styles from "../styles/Home.module.css";
 import { ProjectElement } from "../components/ProjectElement";
+import { AnimatedText } from "../components/AnimatedText";
 import macheteStoreImg from "../public/macheteStore.png";
 import weatherImage from "../public/weatherApp.png";
 import analysisImage from "../public/analysis.svg";
 import dealImage from "../public/deal.svg";
 import fitnessImage from "../public/Fitness tracker-bro.svg";
-import randmImage from "../public/randm.png";
-import randmgraphqlImage from "../public/randmgraphql.png";
+import yosefImage from "../public/yosef_photo.jpg";
 import { TitleSectionSplitter } from "../components/TitleSectionSplitter";
 import { Button } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CardInfo } from "../components/CardInfo";
+import { clearTimeout } from "timers";
+
+import { TextCard } from "../components/TextCard";
+import Image from "next/image";
 
 const Home: NextPage = () => {
   const [showNav, setShowNav] = useState(true);
-  const topFourProjects = [
+  const projects = [
     {
-      projectName: "R&M with GraphQL By Yosef Blandin",
+      projectName: "Favorite List Manager",
+      projectTitle: "Redux State Management, Easy to use, Simple.",
       projectDescription:
-        "Project in which you can see all Rick and Morty's characters and add your favorite to a list",
-      projectStack: "Next, React, Redux, GraphQL",
-      backgroundImage: randmgraphqlImage.src,
+        "You can see all Rick and Morty's characters and add your favorite to a list.",
+      projectStack: "Made with Next, React, Redux and GraphQL.",
       route: "https://rickandmortygraphql-eight.vercel.app/",
     },
     {
-      projectName: "R&M By Yosef Blandin",
+      projectName: "Clothing Ecommerce",
+      projectTitle: "Intuitive. Small. Well user experience.",
       projectDescription:
-        "Project in which you can see all Rick and Morty's characters and add your favorite to a list",
-      projectStack: "Next, React, Redux",
-      backgroundImage: randmImage.src,
-      route: "https://rickandmorty-gilt-nine.vercel.app/",
-    },
-    {
-      projectName: "Machete Store",
-      projectDescription: "Small project made for a local shop",
-      projectStack: "React, Context API",
-      backgroundImage: macheteStoreImg.src,
+        "You can see all Rick and Morty's characters and add your favorite to a list.",
+      projectStack: "Made with React and Context API.",
       route: "https://machete-store-yosefblandin.vercel.app/",
     },
     {
-      projectName: "Weather App",
-      projectStack: "React",
-      projectDescription: "React single page application",
-      backgroundImage: weatherImage.src,
+      projectName: "Weather Single Page",
+      projectTitle: "Informative. Modular. Precise.",
+      projectDescription:
+        "You can see all Rick and Morty's characters and add your favorite to a list.",
+      projectStack: "Made with React.",
       route: "https://weatherapp-yosefblandin.vercel.app/",
     },
   ];
@@ -67,19 +66,19 @@ const Home: NextPage = () => {
     {
       title: "Learning enthusiast",
       description:
-        "I like to read a lot of books to expand my knowledge, and therefore be able to find better solutions to problems",
+        "I like to read a lot of books to expand my knowledge, and therefore be able to find better solutions to problems.",
       img: analysisImage,
     },
     {
       title: "Ownership mindset believer",
       description:
-        "The ownership mindset has been a key to my life in order to overcome challenges, to be relentless recognizing my errors learning from them",
+        "The ownership mindset has been a key to my life in order to overcome challenges, to be relentless recognizing my errors learning from them.",
       img: dealImage,
     },
     {
       title: "Fitness devotee",
       description:
-        "I like to maintain a healthy condition in order to have a better performance mentally and physically",
+        "I like to maintain a healthy condition in order to have a better performance mentally and physically.",
       img: fitnessImage,
     },
   ];
@@ -133,16 +132,79 @@ const Home: NextPage = () => {
               <CardInfo
                 key={element.title}
                 title={element.title}
+                src={element.img}
                 description={element.description}
-                src={element.img.src}
               />
             ))}
           </div>
         </section>
         <section id="projects" className={styles.secondSectionContainer}>
-          <TitleSectionSplitter title={"Projects"} />
-          <div className={styles.topProjectsContainer}>
-            {topFourProjects.map((element, index) => (
+          <div className={styles.secondSectionContainer}>
+            <AnimatedText
+              mediumText={
+                <>
+                  Less development problems.
+                  <br />
+                  Faster results
+                </>
+              }
+            />
+            <Box
+              position={"relative"}
+              margin={"0 auto"}
+              padding={"120px 0"}
+              minHeight={450}
+              backgroundColor={"#fff"}
+            >
+              <Box
+                display={"grid"}
+                justifyContent={"center"}
+                gridTemplateColumns={"repeat(3, 1fr)"}
+                gridTemplateRows={"repeat(2, 1fr)"}
+                gap="20px"
+                margin={"0 auto"}
+                maxWidth={{ sm: 900, lg: 1200 }}
+              >
+                {/* <Image
+                  src={yosefImage}
+                  alt="Yosef Blandin"
+                  style={{
+                    borderRadius: "100%",
+                  }}
+                /> */}
+                <TextCard
+                  text={
+                    <>
+                      <strong>Each project</strong> was developed using
+                      TypeScript in order to create code more secure and
+                      predictable. Additionally we’ve added end to end tests
+                      using Cypress in order to make a deliverable with the best
+                      quality as posible.
+                    </>
+                  }
+                />
+                <TextCard
+                  text={
+                    <>
+                      As Santiago Gonzalez once said:{" "}
+                      <strong>
+                        “Beautiful code is short and concise, so if you were to
+                        give that code to another programmer they would say “oh,
+                        that’s well written code.” It’s much like as if you were
+                        writing a poem.”
+                      </strong>
+                    </>
+                  }
+                />
+              </Box>
+            </Box>
+          </div>
+          <h2 className={styles.projectsTitle}>
+            <strong>Study cases.</strong> The best way to find the study case
+            that is like your dream project.
+          </h2>
+          <div className={styles.projectsCardsContainer}>
+            {projects.map((element, index) => (
               <ProjectElement key={index} {...element} />
             ))}
           </div>
