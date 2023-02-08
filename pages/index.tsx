@@ -23,7 +23,7 @@ import weatherImage from "../public/weatherApp.png";
 import analysisImage from "../public/analysis.svg";
 import dealImage from "../public/deal.svg";
 import fitnessImage from "../public/Fitness tracker-bro.svg";
-import yosefImage from "../public/yosef_photo.jpg";
+import yosefImage from "../public/yosefphoto.jpg";
 import { TitleSectionSplitter } from "../components/TitleSectionSplitter";
 import { Button } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
