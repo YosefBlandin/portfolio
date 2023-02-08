@@ -48,7 +48,7 @@ const Home: NextPage = () => {
       projectName: "Clothing Ecommerce",
       projectTitle: "Intuitive. Small. Well user experience.",
       projectDescription:
-        "You can see all Rick and Morty's characters and add your favorite to a list.",
+        "You can find the clothes that you want to buy. (It doesn't have a payment gateway implemented)",
       projectStack: "Made with React and Context API.",
       route: "https://machete-store-yosefblandin.vercel.app/",
     },
@@ -56,7 +56,7 @@ const Home: NextPage = () => {
       projectName: "Weather Single Page",
       projectTitle: "Informative. Modular. Precise.",
       projectDescription:
-        "You can see all Rick and Morty's characters and add your favorite to a list.",
+        "Find the location you'd like to see the weather or simply see the weather of your current location",
       projectStack: "Made with React.",
       route: "https://weatherapp-yosefblandin.vercel.app/",
     },
