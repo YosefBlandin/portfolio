@@ -33,11 +33,14 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
-        <header className="flex justify-between items-center p-3 z-40 bg-zinc-600 h-12 w-100">
-          <p className="font-bold text-zinc-200">Yosef Blandin</p>
-          <MainNav />
+        <header className="fixed z-40 bg-zinc-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 w-full">
+          <section className="relative flex justify-between lg:justify-start lg:gap-8 xl:gap-16 lg:max-w-lg xl:max-w-xl lg:mx-auto items-center p-3 h-12">
+            <p className="font-bold text-zinc-100">Yosef Blandin</p>
+            <MainNav />
+          </section>
         </header>
-        {children}
+        <div className="h-12 bg-zinc-600"></div>
+        <section>{children}</section>
       </body>
     </html>
   );
