@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Image from "next/image";
 import { MainNav } from "@/components/MainNav";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Yosef Blandin",
@@ -34,13 +35,29 @@ export default function RootLayout({
       <head />
       <body>
         <header className="fixed z-40 bg-zinc-900 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 w-full">
-          <section className="relative flex justify-between lg:justify-start lg:gap-8 xl:gap-16 lg:max-w-lg xl:max-w-xl lg:mx-auto items-center p-3 h-12">
+          <section className="relative flex justify-between lg:justify-start lg:gap-8 xl:gap-16 lg:max-w-lg xl:max-w-2xl lg:mx-auto items-center p-3 h-12 lg:h-16">
             <p className="font-bold text-zinc-100">Yosef Blandin</p>
             <MainNav />
           </section>
         </header>
-        <div className="h-12 bg-zinc-600"></div>
+        <div className="h-12 lg:h-16 bg-zinc-600"></div>
         <section>{children}</section>
+        <footer className="flex flex-col justify-center items-center bg-zinc-900 w-full h-40 text-zinc-100 text-lg mt-20">
+          <ul className="flex flex-wrap gap-5">
+            <li>
+              <Link href="">Linkedin</Link>
+            </li>
+            <li>
+              <Link href="">Twitter</Link>
+            </li>
+            <li>
+              <Link href="">Github</Link>
+            </li>
+          </ul>
+          <p className="mt-4 text-zinc-400">
+            <strong>Yosef Blandin</strong>
+          </p>
+        </footer>
       </body>
     </html>
   );

@@ -48,7 +48,10 @@ export const MainNav = () => {
         <section className="hidden lg:flex">
           <ul className="flex gap-8 xl:gap-16 items-center justify-start">
             {links.map((link) => (
-              <li key={link.name} className="text-white font-light text-xs">
+              <li
+                key={link.name}
+                className="text-white font-light text-xs lg:text-lg"
+              >
                 <Link href={link.url}>{link.name}</Link>
               </li>
             ))}

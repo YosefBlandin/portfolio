@@ -25,7 +25,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between">
       <SectionArticle
         sectionTitle="Frontend Developer"
-        sectionDescription="2 Years of experience."
+        sectionDescription="3 Years of experience creating digital products"
         sectionLinks={mainSectionLinks}
         sectionImg={{ src: yosefMobileImg, alt: "Developer profile image" }}
         sectionSecondaryImg={{
@@ -45,6 +45,8 @@ export default function Home() {
         sectionImgTwClass="xl:max-w-3xl"
         bgColorTwClass="bg-white"
       ></SectionArticle>
+
+      <section className="grid grid-cols-2 gap-4"></section>
     </main>
   );
 }
