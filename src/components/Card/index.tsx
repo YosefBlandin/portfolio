@@ -8,7 +8,7 @@ import {
 } from "react-icons/io5";
 import Image, { StaticImageData } from "next/image";
 
-interface SectionArticle {
+interface Card {
   sectionTitle: string;
   titleTwClass?: string;
   descriptionTwClass?: string;
@@ -20,7 +20,7 @@ interface SectionArticle {
   sectionImgTwClass?: string;
 }
 
-export const SectionArticle: FC<SectionArticle> = ({
+export const Card: FC<Card> = ({
   sectionTitle,
   titleTwClass,
   sectionDescription,

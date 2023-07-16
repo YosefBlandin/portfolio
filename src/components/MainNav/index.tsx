@@ -59,7 +59,7 @@ export const MainNav = () => {
         </section>
       </nav>
       {open && (
-        <section className="bg-zinc-900 fixed z-20 top-0 left-0 right-0 bottom-0 w-full h-full md:hidden">
+        <section className="bg-zinc-900 fixed z-20 top-0 left-0 right-0 bottom-0 w-full h-screen md:hidden">
           <ul className="flex flex-col gap-4 px-12 py-14">
             {links.map((link) => (
               <li key={link.name} className="text-white font-medium text-2xl">
